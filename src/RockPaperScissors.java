@@ -1,4 +1,6 @@
-//Brielle Roze
+/*Brielle Roze
+Project 1: Rock, Paper,  Scissors
+*/
 import java.util.*;
 public class RockPaperScissors
 {
