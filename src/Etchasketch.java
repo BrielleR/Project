@@ -12,6 +12,12 @@ public class Etchasketch
 {
     public static void main (String[]args)
     {
+       String s = "SOLD";
+       s.lastIndexOf("OLD");
+        s.lastIndexOf("OLD", 0);
+        s.lastIndexOf("OLD", 1);
+        s.lastIndexOf("OLD", 2);
+        s.lastIndexOf("OLD", 3);
         //reference: pg 191
         /*DrawingPanel panel = new DrawingPanel(500,500);
         Graphics g = panel.getGraphics();
