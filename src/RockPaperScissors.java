@@ -11,11 +11,11 @@ public class RockPaperScissors
         System.out.println("Welcome to rock paper scissors! ");
         System.out.println("Please either input 1, 2, or 3. 1 for rock, 2 for paper, and 3 for scissors!");
         System.out.println("After you input your response you will be shown the the computer randomized guess!");
-        int paper = 0;
+//        int paper = 0;
         int rockpaperscissors = 0;
-        do {
+  //      do {
 
-            while (paper != 4) {
+            while (rockpaperscissors != 4) {
                 //Recieve Input and out put it {got Rachel's help
                 Scanner rock = new Scanner(System.in);
                 rockpaperscissors = Integer.parseInt(rock.nextLine());
@@ -74,6 +74,6 @@ public class RockPaperScissors
                     }
                 }
             }
-        }while (rockpaperscissors != 4);
+ //       }while (rockpaperscissors != 4);
     }
 }
