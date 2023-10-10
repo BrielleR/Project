@@ -10,7 +10,8 @@ public class RockPaperScissors
 
         System.out.println("Welcome to rock paper scissors! ");
         System.out.println("Please either input 1, 2, or 3. 1 for rock, 2 for paper, and 3 for scissors!");
-        System.out.println("After you input your response you will be shown the the computer randomized guess!");
+        System.out.println("After you input your response you will be shown the the computer randomized guess immediately!");
+        System.out.println("After getting the computers input and the game results it will be up to you to once again put in either 1, 2, or 3, however if you would like the game to end enter 4 at that time. ");
 //        int paper = 0;
         int rockpaperscissors = 0;
   //      do {

@@ -70,6 +70,21 @@ public class Maze {
                 }
             }
             if (room == 6) {
+                System.out.println("Welcome to room 6");
+                System.out.println("Your options are: 1.)go left 2.) go straight 3.)go right please input 1 or 2 or 3");
+                choice = Integer.parseInt(maze.nextLine());
+                if (choice == 1){
+                    System.out.println(room == 1);
+                }
+                else if (choice== 2){
+                    System.out.println(room ==7);
+                }
+                else if (choice == 3){
+                    System.out.println(room ==11);
+                }
+                else{
+                    System.out.println(e);
+                }
 
             }
             if (room == 7) {
