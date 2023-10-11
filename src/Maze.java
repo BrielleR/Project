@@ -1,7 +1,7 @@
 /*Brielle Roze
 Project 2 : Maze
-10/10/23
-Must include 25 rooms
+10/10/23 - 10/11/23
+Must include 25 rooms, also made it so all rooms except the first one the user can choose to restart back at one
  */
 import java.util.*;
 public class Maze
