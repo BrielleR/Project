@@ -15,7 +15,6 @@ pg1005
 pg 866 close window
 pg 871: when they cross paths
 //import javax.swing.event.*; //for mouse events
-
  */
 
 import java.awt.*; //for graphics
@@ -28,9 +27,12 @@ public class ConwaysGameOfLife
     {
 
         //reference: pg 191
-        DrawingPanel panel = new DrawingPanel(500,300);
+        DrawingPanel panel = new DrawingPanel(400,300);
         Graphics g = panel.getGraphics();
-        g.drawLine(25, 75,175,25);
+        g.drawLine(25, 25,25,25);
+        g.drawLine(26, 26,26,26);
+        g.drawLine(25, 24,25,24);
+
 
         //reference chapter 14 823 - 877
         JOptionPane.showMessageDialog(null, "Welcome to Conways Game Of Life");

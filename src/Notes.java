@@ -10,9 +10,11 @@ import java.awt.event.*;
 
 
 
-public class Notes
-{
-    public static void main (String[]args)
+public class Notes {
+
+}
+
+    /*public static void main (String[]args)
     {
 
         //reference: pg 191
@@ -21,6 +23,6 @@ public class Notes
         //g.drawLine(25, 75,175,25);
 
         //reference chapter 14 823 - 877
-        JOptionPane.showMessageDialog(null, "Welcome to Etchasketch");
-    }
-}
+        JOptionPane.showMessageDialog(null, "Welcome to Blank");
+    }*/
+
