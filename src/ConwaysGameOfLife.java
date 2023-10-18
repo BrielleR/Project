@@ -1,5 +1,5 @@
 /*Brielle Roze
-Conway's Game of Life
+Project 4: Conway's Game of Life
 10/11/23 -
 Rules
 use arrays
@@ -19,7 +19,7 @@ pg 871: when they cross paths
 
 import java.awt.*; //for graphics
 import javax.swing.*; //for GUI
-import java.awt.event.*;
+//import java.awt.event.*;
 import java.util.Random;
 
 public class ConwaysGameOfLife
@@ -41,16 +41,7 @@ public class ConwaysGameOfLife
         g.drawLine(number, number,number,number);
         g.drawLine(number2, number2,number2,number2);
         g.drawLine(number, number2,number,number2);
-
-
         //reference chapter 14 823 - 877
         JOptionPane.showMessageDialog(null, "Welcome to Conways Game Of Life");
-
-       /* private Point p1;
-        private Point p2;
-        private int dx;
-        private int dy;
-        */
-
     }
 }

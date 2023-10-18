@@ -1,42 +1,37 @@
 /*Brielle Roze
-Project 2 Typing Speed Tester
+Project 3: Typing Speed Tester
 Chapter 13
+timer code either on 870 or 793
 //System.currentTimeMillis() = calculate time elapsed
 60,000 milliseconds = 1 minute
+6000 milliseconds = 1 second
 if using a file check chapter 6 pg376-377 & 380 and import java.io.*; //for file
+Progress notes  for 10/18/23
+have a working timer, can ask user for input, however haven't found how to count how many words are in the users input right now only counts 1
 */
 import java.util.*;
 
 public class TypingSpeed
 {
     public static void main(String[]args)
-            //throws FileNotFoundException
-
     {
         System.out.println("Hello! And welcome to typing Speed tester!");
         System.out.println("It's time to type how many words per minute you can type!");
         Scanner input = new Scanner(System.in);
        //396
-        //String tester = input.nextLine();
+        //String tester = input.nextLine(); what was this for?
         //pg 397
         long startTime = System.currentTimeMillis();
-
-        String word = "s";
         int count=0;
-        while (input.hasNextLine()) //380 //384 //392
-        {
-            word = input.next();
+        //while (input.hasNextLine()) //380 //384 //392 loop that never stops
+        //{
+            String word = input.nextLine();// Error never stops asking user for input nvm was just stuck in while loop
             count++;
-        }
-        //String extra = input.next();
-        System.out.println("total words =+" + count);
-        System.out.println("number " + count + " = " + word);
-
-
+       // }
+        //String extra = input.next(); what was this for?
+        System.out.println("total words " + count + " \n for the user input " + word);
         long endTime = System.currentTimeMillis(); // Calculate time elapsed by milliseconds? pg 793
-        System.out.println("Elapsed time in minutes:" + (endTime - startTime)/60000);
-
-        // Since it is calculated in ms must divide by 60000 to get minutes
-        //Error keeps saying 0 seconds
+        System.out.println("Elapsed time in seconds:" + (endTime - startTime)/6000);
+        // Since it is calculated in ms must divide by 6000 to get seconds
     }
 }
