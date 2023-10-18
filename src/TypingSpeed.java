@@ -20,15 +20,18 @@ public class TypingSpeed
         //String tester = input.nextLine();
         //pg 397
         long startTime = System.currentTimeMillis();
-        int count = 0;
 
-        while (input.hasNext()) //380
+        String word = "s";
+        int count=0;
+        while (input.hasNextLine()) //380 //384 //392
         {
-            String word = input.next();
+            word = input.next();
             count++;
         }
         //String extra = input.next();
         System.out.println("total words =+" + count);
+        System.out.println("number " + count + " = " + word);
+
 
         long endTime = System.currentTimeMillis(); // Calculate time elapsed by milliseconds? pg 793
         System.out.println("Elapsed time in minutes:" + (endTime - startTime)/60000);

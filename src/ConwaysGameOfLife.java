@@ -20,18 +20,27 @@ pg 871: when they cross paths
 import java.awt.*; //for graphics
 import javax.swing.*; //for GUI
 import java.awt.event.*;
+import java.util.Random;
 
 public class ConwaysGameOfLife
 {
     public static void main (String[]args)
     {
+        //random numbers {used page 307-308
+        Random r = new Random();
+        int number = r.nextInt(399) + 1; // random number from 1 to 3
+        System.out.println(number);
+
+        Random a = new Random();
+        int number2 = a.nextInt(399) + 1; // random number from 1 to 3
+        System.out.println(number2);
 
         //reference: pg 191
         DrawingPanel panel = new DrawingPanel(400,300);
         Graphics g = panel.getGraphics();
-        g.drawLine(25, 25,25,25);
-        g.drawLine(26, 26,26,26);
-        g.drawLine(25, 24,25,24);
+        g.drawLine(number, number,number,number);
+        g.drawLine(number2, number2,number2,number2);
+        g.drawLine(number, number2,number,number2);
 
 
         //reference chapter 14 823 - 877
