@@ -17,7 +17,7 @@ public class RockPaperScissors
   //      do {
 
             while (rockpaperscissors != 4) {
-                //Recieve Input and out put it {got Rachel's help
+                //Receive Input and out put it {got Rachel's help
                 Scanner rock = new Scanner(System.in);
                 rockpaperscissors = Integer.parseInt(rock.nextLine());
 

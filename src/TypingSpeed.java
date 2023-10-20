@@ -1,6 +1,7 @@
 /*Brielle Roze
 Project 3: Typing Speed Tester
 Chapter 13
+162 for counting the string stuff
 timer code either on 870 or 793
 //System.currentTimeMillis() = calculate time elapsed
 60,000 milliseconds = 1 minute
@@ -9,6 +10,7 @@ if using a file check chapter 6 pg376-377 & 380 and import java.io.*; //for file
 Progress notes  for 10/18/23
 have a working timer, can ask user for input, however haven't found how to count how many words are in the users input right now only counts 1
 */
+//import java.io.*;
 import java.util.*;
 
 public class TypingSpeed
@@ -23,15 +25,18 @@ public class TypingSpeed
         //pg 397
         long startTime = System.currentTimeMillis();
         int count=0;
-        //while (input.hasNextLine()) //380 //384 //392 loop that never stops
+        //while (input.hasNext()) //380 //384 //392 loop that never stops
         //{
-            String word = input.nextLine();// Error never stops asking user for input nvm was just stuck in while loop
+            String word = input.next();// Error never stops asking user for input nvm was just stuck in while loop
             count++;
-       // }
-        //String extra = input.next(); what was this for?
+        //}
         System.out.println("total words " + count + " \n for the user input " + word);
         long endTime = System.currentTimeMillis(); // Calculate time elapsed by milliseconds? pg 793
         System.out.println("Elapsed time in seconds:" + (endTime - startTime)/6000);
+        double t = endTime - startTime/6000;
+        double s = count/t;
+        double sm = 2*60;
+        System.out.println("Your typing speed is: " + s + " Per-second \n And: " + sm + " Per-minute.");
         // Since it is calculated in ms must divide by 6000 to get seconds
     }
 }
