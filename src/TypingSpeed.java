@@ -17,26 +17,30 @@ public class TypingSpeed
 {
     public static void main(String[]args)
     {
-        System.out.println("Hello! And welcome to typing Speed tester!");
+        System.out.println("\nHi! Welcome to typing Speed tester!");
         System.out.println("It's time to type how many words per minute you can type!");
         Scanner input = new Scanner(System.in);
        //396
-        //String tester = input.nextLine(); what was this for?
         //pg 397
         long startTime = System.currentTimeMillis();
         int count=0;
-        //while (input.hasNext()) //380 //384 //392 loop that never stops
+        //while (input.hasNext()) //380 //384 //392 Error loop that never stops
         //{
-            String word = input.next();// Error never stops asking user for input nvm was just stuck in while loop
+            String s1 = input.next();// Error never stops asking user for input nvm was just stuck in while loop
             count++;
         //}
-        System.out.println("total words " + count + " \n for the user input " + word);
-        long endTime = System.currentTimeMillis(); // Calculate time elapsed by milliseconds? pg 793
-        System.out.println("Elapsed time in seconds:" + (endTime - startTime)/6000);
-        double t = endTime - startTime/6000;
-        double s = count/t;
-        double sm = 2*60;
-        System.out.println("Your typing speed is: " + s + " Per-second \n And: " + sm + " Per-minute.");
-        // Since it is calculated in ms must divide by 6000 to get seconds
+
+        long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
+        double t = (endTime - startTime)/6000; // goes from milliseconds to seconds // Since it is calculated in ms must divide by 6000 to get seconds
+        //error only ever out puts 2 //System.out.println("Length of input : " + s1.length());
+        //error only ever out puts 1 // System.out.println("Total words: " + count ); //+ " \n for the user input " + word
+        System.out.println("Elapsed time in seconds:" + t);
+        double s = count/t; //divides time in seconds by the number of words //Error since count is incorrect results are not accurate
+        double sm = s*60;
+        System.out.println("Your typing speed is: " + s + " Words Per-second \nAnd therefore : " + sm + " words Per-minute.");
+
+
+
+
     }
 }
