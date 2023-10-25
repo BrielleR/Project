@@ -44,7 +44,6 @@ public class Maze
 
                 } else if (choice == 3) {
                     System.out.println(room = 7);
-
                 }
                 else if (choice == 4){
                     System.out.println(room = 1);

@@ -9,9 +9,11 @@ Pages used: pg 396, pg 397, 162 for counting the string stuff, timer code either
 
 Progress notes
  Date:  10/18/23
- Notes: have a working timer, can ask user for input, however haven't found how to count how many words are in the users input right now only counts 1
+ Notes: Have a working timer, can ask user for input, however haven't found how to count how many words are in the users input right now only counts 1
  Date: 10/24/23
- Notes: Works now counts by characters not number of words, but also timer stuff works and calculating how fast based off character is accurate
+ Notes: Works now counts by characters not number of words, but also timer stuff works and calculating how fast based off character is accurate, but does not read input to see if user input is correct
+Date: 10/25/23
+Notes: Found a possible way tp read user input and compare contents with dictionary(pg 778- pg 779), just need to figure out how to add dictionary file
 */
 //import java.io.*;
 import java.util.*;
