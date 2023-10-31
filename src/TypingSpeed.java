@@ -14,7 +14,9 @@ Progress notes
  Date: 10/24/23
  Notes: Works now counts by characters not number of words, but also timer stuff works and calculating how fast based off character is accurate, but does not read input to see if user input is correct
 Date: 10/25/23
-Notes: Found a possible way to read user input and compare contents with dictionary(pg 778- pg 779), just need to figure out how to add dictionary file
+Notes: Found a possible way to read user input and compare contents with dictionary(pg 778- pg 779), just need to figure out how to add dictionary file nvm
+Date:10/31/23
+Notes: Leanred about string splitting, may look into that for seperating words in a string, but also still need to add a dictionary file for the spell check code in notes
 */
 //import java.io.*;
 import java.util.*;
