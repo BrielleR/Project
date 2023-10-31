@@ -5,6 +5,7 @@ Pages used: pg 396, pg 397, 162 for counting the string stuff, timer code either
 -System.currentTimeMillis() = calculate time elapsed (pg 793)
 -60,000 milliseconds = 1 minute 6000 milliseconds = 1 second
 - For calculating user input accuracy use pg 256
+-163-164 readind for white spaces/searching for words individually
 
 
 Progress notes
@@ -13,7 +14,7 @@ Progress notes
  Date: 10/24/23
  Notes: Works now counts by characters not number of words, but also timer stuff works and calculating how fast based off character is accurate, but does not read input to see if user input is correct
 Date: 10/25/23
-Notes: Found a possible way tp read user input and compare contents with dictionary(pg 778- pg 779), just need to figure out how to add dictionary file
+Notes: Found a possible way to read user input and compare contents with dictionary(pg 778- pg 779), just need to figure out how to add dictionary file
 */
 //import java.io.*;
 import java.util.*;
@@ -29,7 +30,10 @@ public class TypingSpeed
 
         long startTime = System.currentTimeMillis();
 
-        String s1 = input.nextLine();
+        while (input.hasNextLine()) 
+        {
+            String s1 = input.nextLine();
+            process(s1);
         System.out.println("Length of input : " + s1.length());
         long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
         double t = (endTime - startTime)/6000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
@@ -38,9 +42,12 @@ public class TypingSpeed
         double s = amount/t; //divides time in seconds by the number of words
         double sm = s*60;
         System.out.println("Your typing speed is: " + s + " Characters Per-second \nAnd therefore : " + sm + " Characters Per-minute.");
+        }
 
 
 
+    }
 
+    private static void process(String s1) {
     }
 }

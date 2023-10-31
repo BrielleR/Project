@@ -32,7 +32,7 @@ public class Notes
 {
     public static void main (String[] args) throws FileNotFoundException
     {
-        //pg 778 word work for Typing speed test if I make existing file that is a dictionary
+        //pg 778 word work for Typing speed test if I make existing file that is a dictionary, to have a spell check for TST
         System.out.println("Searching for whether or not a word is in the dictionary/the mentioned file");
 
         Scanner in = new Scanner(new File("words.txt"));
@@ -46,7 +46,7 @@ public class Notes
         Scanner console = new Scanner(System.in);
         while(true)
         {
-            System.out.print("Word to challenge (Enter to quit)?");
+            System.out.print("Word: (Enter to quit)?");
             String target = console.nextLine();
             if (target.trim().length() == 0)
             {
@@ -55,7 +55,7 @@ public class Notes
             int index = Collections.binarySearch(words, target);
             if (index >= 0)
             {
-                System.out.println("\"" + target + "\" is word #" + index + "of" + words.size());
+                System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());
             }
             else
             {
