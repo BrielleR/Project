@@ -1,11 +1,11 @@
 /*Brielle Roze
 Project 3: Typing Speed Tester
 Chapter 13
-Pages used: pg 396, pg 397, 162 for counting the string stuff, timer code either on 870 or 793
+Pages used: pg 396, pg 397, 162 for counting the string stuff, timer code either on 870 or 793, -163-164 reading for white spaces but using tokens
 -System.currentTimeMillis() = calculate time elapsed (pg 793)
 -60,000 milliseconds = 1 minute 6000 milliseconds = 1 second
 - For calculating user input accuracy use pg 256
--163-164 readind for white spaces/searching for words individually
+
 
 
 Progress notes
@@ -16,11 +16,12 @@ Progress notes
 Date: 10/25/23
 Notes: Found a possible way to read user input and compare contents with dictionary(pg 778- pg 779), just need to figure out how to add dictionary file nvm
 Date:10/31/23
-Notes: Leanred about string splitting, may look into that for seperating words in a string, but also still need to add a dictionary file for the spell check code in notes
+Notes: Learned about string splitting, may look into that for separating words in a string, but also still need to add a dictionary file for the spell check code in notes
+Date 11/1/23
+Notes: Tried to split string and turn it into an array
 */
-//import java.io.*;
+import java.io.*;
 import java.util.*;
-
 public class TypingSpeed
 {
     public static void main(String[]args)
@@ -31,11 +32,7 @@ public class TypingSpeed
 
 
         long startTime = System.currentTimeMillis();
-
-        while (input.hasNextLine()) 
-        {
-            String s1 = input.nextLine();
-            process(s1);
+        String s1 = input.nextLine();
         System.out.println("Length of input : " + s1.length());
         long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
         double t = (endTime - startTime)/6000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
@@ -44,12 +41,9 @@ public class TypingSpeed
         double s = amount/t; //divides time in seconds by the number of words
         double sm = s*60;
         System.out.println("Your typing speed is: " + s + " Characters Per-second \nAnd therefore : " + sm + " Characters Per-minute.");
-        }
+        String values = "hi hello and good bye";
+        String[]  array = values.split(" ");
+        System.out.println("List:"+ array);
 
-
-
-    }
-
-    private static void process(String s1) {
     }
 }
