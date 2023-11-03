@@ -1,6 +1,7 @@
 /*Brielle Roze
 Project 2 : Maze
 10/10/23 - 10/11/23
+Turned in/Printed: 11/2/23
 Must include 25 rooms, also made it so all rooms except the first one the user can choose to restart back at one
  */
 import java.util.*;
@@ -9,16 +10,12 @@ public class Maze
     public static void main(String[]args)
     {
         System.out.println("Welcome to a Maze! \n This maze has 25 rooms! \n Best of luck navigating your way through!");
-        //int m = 0;
         int room = 1;
         int choice;
         String e = "Error with user input";
-
         Scanner maze = new Scanner(System.in);
-
         while (room != 26) {
             if (room == 1) {
-
                 System.out.println("Welcome to the first room!");
                 System.out.println("Your options are: 1.)Go forwards 2.)Go Right please either input 1 or 2");
                 choice = Integer.parseInt(maze.nextLine());
@@ -31,17 +28,14 @@ public class Maze
                 else{System.out.println(e);}
             }
             if (room == 2) {
-
                 System.out.println("Welcome to the second room");
                 System.out.println("Your options are: 1.)Go backwards 2.)Go forwards 3.)Go right Please Either input 1 or 2 or 3 ");
                 System.out.println("Or if you would like to start over input 4");
                 choice = Integer.parseInt(maze.nextLine());
                 if (choice == 1) {
                     System.out.println(room = 1);
-
                 } else if (choice == 2) {
                     System.out.println(room = 3);
-
                 } else if (choice == 3) {
                     System.out.println(room = 7);
                 }
@@ -50,7 +44,6 @@ public class Maze
                 }
                 else{System.out.println(e);}
             }
-
             if (room == 3) {
                 System.out.println("Welcome to room 3");
                 System.out.println("Your options are: 1.)Go backwards 2.)Go forwards 3.)Go right Please either input 1 or 2 or 3");

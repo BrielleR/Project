@@ -41,9 +41,9 @@ public class TypingSpeed
         double s = amount/t; //divides time in seconds by the number of words
         double sm = s*60;
         System.out.println("Your typing speed is: " + s + " Characters Per-second \nAnd therefore : " + sm + " Characters Per-minute.");
-        String values = "hi hello and good bye";
-        String[]  array = values.split(" ");
-        System.out.println("List:"+ array);
+        //String values = "hi hello and good bye";
+        String[] array = s1.split(" ");
+        //System.out.println("List:"+ array);
 
     }
 }

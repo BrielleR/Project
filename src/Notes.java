@@ -3,8 +3,8 @@ Semester 1 Projects complete 2/5
 Project 1: Rock Paper Scissors
 Project 2: Maze
 Project 3: Typing Speed
-Project 4:
-Project 5:
+Project 4: Word-le pg 778 (must use lists and classes)
+Project 5: Mastermind (lots of requirements check GS05-03)
 Project options:
 RPG Use page(s) 824 - 827
 Adventure Use strings or page(s) 824 - 827
@@ -15,7 +15,6 @@ Project 2: Sudoku use page 831. 852
 Project 3:Levenshtein (Required)
 Project 4: Levenshtein the shortest path
 Project 5: Conways Game of Life
-Word-le use 778
 Solitaire use 780 - 781
 */
 import java.awt.*; //for graphics
@@ -32,6 +31,8 @@ public class Notes
 {
     public static void main (String[] args) throws FileNotFoundException
     {
+
+        //List<Integer>
         //pg 778 word work for Typing speed test if I make existing file that is a dictionary, to have a spell check for TST
         System.out.println("Searching for whether or not a word is in the dictionary/the mentioned file");
 
