@@ -21,6 +21,7 @@ Date 11/1/23
 Notes: Tried to split string and turn it into an array
 */
 import java.io.*;
+import java.text.MessageFormat;
 import java.util.*;
 public class TypingSpeed
 {
@@ -43,7 +44,18 @@ public class TypingSpeed
         System.out.println("Your typing speed is: " + s + " Characters Per-second \nAnd therefore : " + sm + " Characters Per-minute.");
         //String values = "hi hello and good bye";
         String[] array = s1.split(" ");
-        //System.out.println("List:"+ array);
+        //Now calculate length of array and then out put each word found, and then spell check each then calculate accuracy and typing speed
+        //Maybe try page 891-892 or 902
+        System.out.println(MessageFormat.format("List:{0}", array)); //outputs the first word, just testing
+        System.out.println(MessageFormat.format("List:{1}", array)); //outputs the second word, just testing
+
+        /*
+        Compares users input to what they should have input, other option for finding accuracy
+        String {} s,t;
+        if (s[0].equals(t[0])
+        {
+        }
+         */
 
     }
 }
