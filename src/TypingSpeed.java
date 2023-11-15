@@ -40,7 +40,7 @@ import java.util.*;
 public class TypingSpeed
 {
     public static void main(String[]args) throws FileNotFoundException {
-        //collecting formation
+        //Collecting formation
         System.out.println("\nHello and Welcome to Typing Speed Tester!");
         System.out.println("It's time to type how fast can type! \nGo ahead and start typing! \nAs soon as your done click enter, to stop the timer and get your results!");
         Scanner input = new Scanner(System.in);
@@ -63,14 +63,14 @@ public class TypingSpeed
 
         //Calculating Accuracy
         //cross-checking input with dictionary
-        //System.out.println("Searching for whether or not a word is in the dictionary/the mentioned file");
+        //System.out.println("Searching for whether a word is in the dictionary/the mentioned file or not");
         Scanner in = new Scanner(new File("/Users/rozebri/Project/words.txt"));
         List<String> words = new ArrayList<String>();
 
-        //Change while to be while the array is less than zero start and the last word in the array dn work its way
+        //Change while, to be while the array is less than zero break start at the last word in the array and work its way
         // backwards till there are no more words to check OR till the program reaches the amount of words in the list
         // and once the last word is checked in the dictionary end loop, so maybe change the while loop to a for loop
-        // because that will us look into each word individually look into pg 443
+        // because that will let us look into each word individually look into pg 443
         //also maybe make an int accuracy = r; and then everytime a word is not found in the dictionary subtract 1
         // from accuracy and once the for loop is broken out put accuracy out of r (accuracy + "/" + r);
         while (in.hasNext())
