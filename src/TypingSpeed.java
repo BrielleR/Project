@@ -1,6 +1,6 @@
 /*Brielle Roze
 Project 3: Typing Speed Tester
-Pages used: Chapter 13, pg 396, pg 397, 162 for counting the string stuff, timer code either on 870 or 793, -163-164 reading for white spaces but using tokens
+Pages used: Chapter 13, pg 396, pg 397, 162 for counting the string stuff, timer code either on 870 or 793, -163-164 reading for white spaces but using tokens, 891-892 or 902
 -System.currentTimeMillis() = calculate time elapsed (pg 793)
 -60,000 milliseconds = 1 minute 6000 milliseconds = 1 second
 - For calculating user input accuracy use pg 256, 778, 681
@@ -16,7 +16,7 @@ Progress notes
  off character is accurate, but does not read input to see if user input is correct
 Date: 10/25/23
 Notes: Found a possible way to read user input and compare contents with dictionary(pg 778- pg 779), just need to
-figure out how to add dictionary file nvm
+figure out how to add dictionary file
 Date:10/31/23
 Notes: Learned about string splitting, may look into that for separating words in a string, but also still need to
 add a dictionary file for the spell check code in notes
@@ -29,47 +29,55 @@ their needed to type from the options given, and once they have chosen then star
 starts as soon as the program is run which effects the accuracy of the speed tester as the timer starts right away
 meaning while the user is reading intro their time is ticking, also with different options have the code read a
 different file for each option for the sake of the accuracy testing portion
+Date:11/15/23
+Notes:Decided to just cross check user input with dictionary, so far can count how many words the user input and have a
+working dictionary, but still need tp cross check user input wih dictionary either one word are a time, or just the
+string as a whole but then would have to use idea mentioned above
 
 */
 import java.io.*;
-import java.text.MessageFormat;
 import java.util.*;
 public class TypingSpeed
 {
     public static void main(String[]args) throws FileNotFoundException {
-        System.out.println("\nHi! \nWelcome to typing Speed tester!");
+        //collecting formation
+        System.out.println("\nHello and Welcome to Typing Speed Tester!");
         System.out.println("It's time to type how fast can type! \nGo ahead and start typing! \nAs soon as your done click enter, to stop the timer and get your results!");
         Scanner input = new Scanner(System.in);
-
-
         long startTime = System.currentTimeMillis();
         String s1 = input.nextLine();
         System.out.println("Length of input : " + s1.length());
         long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
         double t = (endTime - startTime)/6000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
+        //Calculating Speed
         System.out.println("Elapsed time in seconds:" + t);
         int amount = s1.length();
         double s = amount/t; //divides time in seconds by the number of words
         double sm = s*60;
-        System.out.println("Your typing speed is: " + s + " Characters Per-second \nAnd therefore : " + sm + " Characters Per-minute.");
-        //String values = "hi hello and good bye";
+        System.out.println("Your typing speed is: \n " + s + " Characters Per-second \nAnd therefore: \n" + sm + " Characters Per-minute.");
         String[] array = s1.split(" ");
-        //Now calculate length of array and then out put each word found, and then spell check each then calculate accuracy and typing speed
-        //Maybe try page 891-892 or 902
-        System.out.println(MessageFormat.format("List:{0}", array)); //outputs the first word, just testing
-        System.out.println(MessageFormat.format("List:{1}", array)); //outputs the second word, just testing
+        int r = array.length;     //length by # of words:  r
+        double l = r/t; //divides time in seconds by the number of words
+        double m = l*60;
+        System.out.println("Your typing speed is:\n " + r + " Words Per-second \nAnd therefore: \n" + m + " Words Per-minute.");
 
-        //cross checking input with dictionary
+        //Calculating Accuracy
+        //cross-checking input with dictionary
         //System.out.println("Searching for whether or not a word is in the dictionary/the mentioned file");
-
         Scanner in = new Scanner(new File("/Users/rozebri/Project/words.txt"));
         List<String> words = new ArrayList<String>();
+
+        //Change while to be while the array is less than zero start and the last word in the array dn work its way
+        // backwards till there are no more words to check OR till the program reaches the amount of words in the list
+        // and once the last word is checked in the dictionary end loop, so maybe change the while loop to a for loop
+        // because that will us look into each word individually look into pg 443
+        //also maybe make an int accuracy = r; and then everytime a word is not found in the dictionary subtract 1
+        // from accuracy and once the for loop is broken out put accuracy out of r (accuracy + "/" + r);
         while (in.hasNext())
         {
             String word = in.next();
             words.add(word);
         }
-
         Scanner console = new Scanner(System.in);
         while(true)
         {
@@ -77,20 +85,12 @@ public class TypingSpeed
             String target = console.nextLine(); //change this so instead of asking for user input checks users input with the file given and saying whether everything input was found in file
 
             if (target.trim().length() == 0)
-            {
-                break;
-            }
+                { break;}
             int index = Collections.binarySearch(words, target);
             if (index >= 0)
-            {
-                System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());
-            }
+                { System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());}
             else
-            {
-                System.out.println(target + " is not found");
-            }
+                { System.out.println(target + " is not found");}
         }
-
-
     }
 }
