@@ -41,25 +41,26 @@ public class TypingSpeed
 {
     public static void main(String[]args) throws FileNotFoundException {
         //Collecting formation
-        System.out.println("\nHello and Welcome to Typing Speed Tester!");
+        System.out.println("\nHello & Welcome to Typing Speed Tester!");
         System.out.println("It's time to type how fast can type! \nGo ahead and start typing! \nAs soon as your done click enter, to stop the timer and get your results!");
         Scanner input = new Scanner(System.in);
         long startTime = System.currentTimeMillis();
         String s1 = input.nextLine();
-        System.out.println("Length of input : " + s1.length());
         long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
         double t = (endTime - startTime)/6000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
         //Calculating Speed
         System.out.println("Elapsed time in seconds:" + t);
+        System.out.println("\nLength of input as characters: " + s1.length());
         int amount = s1.length();
-        double s = amount/t; //divides time in seconds by the number of words
+        double s = amount/t; //divides time in seconds by the number of characters
         double sm = s*60;
-        System.out.println("Your typing speed is: \n " + s + " Characters Per-second \nAnd therefore: \n" + sm + " Characters Per-minute.");
-        String[] array = s1.split(" ");
+        System.out.println("Your typing speed as characters per minute is: \n " + s + " Characters Per-second \nAnd therefore: \n" + sm + " Characters Per-minute.");
+        String[] array = s1.split(" "); //puts input into an array
         int r = array.length;     //length by # of words:  r
         double l = r/t; //divides time in seconds by the number of words
         double m = l*60;
-        System.out.println("Your typing speed is:\n " + r + " Words Per-second \nAnd therefore: \n" + m + " Words Per-minute.");
+        System.out.println("\nLength of input as words: " + r);
+        System.out.println("Your typing speed as words per minute is:\n " + r + " Words Per-second \nAnd therefore: \n" + m + " Words Per-minute.");
 
         //Calculating Accuracy
         //cross-checking input with dictionary
@@ -73,6 +74,15 @@ public class TypingSpeed
         // because that will let us look into each word individually look into pg 443
         //also maybe make an int accuracy = r; and then everytime a word is not found in the dictionary subtract 1
         // from accuracy and once the for loop is broken out put accuracy out of r (accuracy + "/" + r);
+
+        //450-451 if we give the user what o input and  have to check how accurate it is
+
+        //94, runs list backwards so in this case starting at r (the number of words in the array and worke backward till 1
+        for (int i=r; i>=1; i--)
+        {
+            System.out.println(i + " ");
+        }
+
         while (in.hasNext())
         {
             String word = in.next();
