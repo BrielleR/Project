@@ -77,7 +77,7 @@ public class TypingSpeed
 
         //450-451 if we give the user what o input and  have to check how accurate it is
 
-        //94, runs list backwards so in this case starting at r (the number of words in the array and worke backward till 1
+        //94, runs list backwards so in this case starting at r (the number of words in the array and worked backwards till 1
         for (int i=r; i>=1; i--)
         {
             System.out.println(i + " ");

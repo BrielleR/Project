@@ -28,6 +28,25 @@ public class Notes
 {
     public static void main (String[] args) throws FileNotFoundException
     {
+        /*
+        //Compares users input to what they should have input, other option for finding accuracy of TST
+        String s = "blah blah blah"; //what you want the user to input
+        System.out.println("PLease input the following:");
+        Scanner input = new Scanner(System.in);
+        String s1 = input.nextLine();
+
+        String {} s,s1;
+        if (s[0].equals(s1[0])
+        {
+            System.out.println("Congrats you have perfect accuracy");
+        }
+
+        else
+        {
+            System.out.println("Your accuracy was not perfect");
+        }
+
+         */
 
         //List<Integer>
         //pg 778 word work for Typing speed test if I make existing file that is a dictionary, to have a spell check for TST
@@ -62,13 +81,9 @@ public class Notes
         }
 
 
-         /*
-        //Compares users input to what they should have input, other option for finding accuracy
-        String {} s,t;
-        if (s[0].equals(t[0])
-        {
-        }
-         */
+
+
+
 
 
         /* Counts first word/chars of a string pg 159 could help with Typing speed tester
