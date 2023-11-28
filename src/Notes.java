@@ -2,8 +2,9 @@
 Semester 1 Projects complete 2/5
 Project 1: Rock Paper Scissors
 Project 2: Maze
+*must start to use lists and classes
 Project 3: Typing Speed
-Project 4: Word-le pg 778 (must use lists and classes)
+Project 4: Word-le pg 778
 Project 5: Mastermind (lots of requirements check GS05-03)
 Other Project options:
 RPG Use page(s) 824 - 827
