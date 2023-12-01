@@ -42,36 +42,44 @@ public class Wordle
         System.out.println(s1.length());
         //counts 1,2,3,4,5 NOT 0,1,2,3,4
 
-        do {
+        do
+        {
 
-            if (l < 5) {
+            if (l < 5)
+            {
                 System.out.println("Error your input has to few characters. It needs one 5 letter word!");
-            } else if (l > 5) {
+            } else if (l > 5)
+            {
                 System.out.println("Error your input has to many characters. It needs one 5 letter word!");
-            } else if (l == 5) {
+            } else if (l == 5)
+            {
 
                 //Here is a code that lets the user search a word to see if it's in the given file, change it so
                 //t takes a random word from the file each time to be the word the user is trying to guess
                 //currently does not work accurately, only recognizes one of the four words, and doesn't end when user hits enter.
 
-                Scanner in = new Scanner(new File("/Users/rozebri/Project/WordleWords"));
+                Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\WordleWords"));
                 List<String> words = new ArrayList<String>();
                 while (in.hasNext()) {
                     String word = in.next();
                     words.add(word);
                 }
                 Scanner console = new Scanner(System.in);
-                while (true) {
+                while (true)
+                {
                     System.out.print("Word: (Enter to quit)?");
                     String target = console.nextLine(); //change this so instead of asking for user input checks users input with the file given and saying whether everything input was found in file
 
-                    if (target.trim().length() == 0) {
+                    if (target.trim().length() == 0)
+                    {
                         break;
                     }
                     int index = Collections.binarySearch(words, target);
-                    if (index >= 0) {
+                    if (index >= 0)
+                    {
                         System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());
-                    } else {
+                    } else
+                    {
                         System.out.println(target + " is not found");
                     }
                 }
