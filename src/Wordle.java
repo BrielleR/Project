@@ -19,6 +19,9 @@ working loop back to the start not just end when user has less that needed input
 big or if to small just endlessly tells user that), and found a way to keep track of how many times they have guessed
 a word can't really apply till I add what the word is whether their input matches it in any way, and prompt the user
  to input another word.
+Date:11/28/23
+Notes:Fixed it so the file reading part ends when you click enter, unnecessary but at least it works now, fixed it so
+if user input characters less than or greater than 5 then it out put one time what their error was no longer infinitely loops
 */
 import java.io.*;
 import java.util.*;
@@ -42,46 +45,55 @@ public class Wordle
         System.out.println(s1.length());
         //counts 1,2,3,4,5 NOT 0,1,2,3,4
 
+        Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\WordleWords"));
+        List<String> words = new ArrayList<String>();
+        //use random to randomly select a word from the file, to be the word-le word they need to guess outside the loop so doesn't choose a new word each time
+       //Find a way to find out how many words are in the file to have the right range for random
+        Random m = new Random();
+        int number = m.nextInt(3) + 1; // random number from 1 to 3
+        System.out.println();
+
         do
         {
-
             if (l < 5)
             {
                 System.out.println("Error your input has to few characters. It needs one 5 letter word!");
-            } else if (l > 5)
-            {
+                break;
+            }
+            else if (l > 5) {
                 System.out.println("Error your input has to many characters. It needs one 5 letter word!");
-            } else if (l == 5)
-            {
-
+                break;
+            }
+            else if (l == 5) {
                 //Here is a code that lets the user search a word to see if it's in the given file, change it so
                 //t takes a random word from the file each time to be the word the user is trying to guess
                 //currently does not work accurately, only recognizes one of the four words, and doesn't end when user hits enter.
 
-                Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\WordleWords"));
-                List<String> words = new ArrayList<String>();
-                while (in.hasNext()) {
+                for (int i=r; i>=1; i--)
+                {
+                    System.out.println(i + " ");
+                }
+                while (in.hasNext())
+                {
                     String word = in.next();
                     words.add(word);
                 }
                 Scanner console = new Scanner(System.in);
-                while (true)
+                while(true)
                 {
                     System.out.print("Word: (Enter to quit)?");
                     String target = console.nextLine(); //change this so instead of asking for user input checks users input with the file given and saying whether everything input was found in file
 
                     if (target.trim().length() == 0)
                     {
+                        System.out.println(r = 6);
                         break;
                     }
                     int index = Collections.binarySearch(words, target);
                     if (index >= 0)
-                    {
-                        System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());
-                    } else
-                    {
-                        System.out.println(target + " is not found");
-                    }
+                    { System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());}
+                    else
+                    { System.out.println(target + " is not found");}
                 }
             }
         } while (r!=6);

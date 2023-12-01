@@ -65,7 +65,7 @@ public class TypingSpeed
         //Calculating Accuracy
         //cross-checking input with dictionary
         //System.out.println("Searching for whether a word is in the dictionary/the mentioned file or not");
-        Scanner in = new Scanner(new File("/Users/rozebri/Project/words.txt"));
+        Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\words.txt"));
         List<String> words = new ArrayList<String>();
 
         //Change while, to be while the array is less than zero break start at the last word in the array and work its way
