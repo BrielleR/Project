@@ -64,7 +64,7 @@ public class Wordle
                 System.out.println("Error your input has to many characters. It needs one 5 letter word!");
                 break;
             }
-            else if (l == 5) {
+            else {
                 //Here is a code that lets the user search a word to see if it's in the given file, change it so
                 //t takes a random word from the file each time to be the word the user is trying to guess
                 //currently does not work accurately, only recognizes one of the four words, and doesn't end when user hits enter.

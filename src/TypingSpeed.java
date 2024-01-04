@@ -4,6 +4,7 @@ Pages used: Chapter 13, pg 396, pg 397, 162 for counting the string stuff, timer
 -System.currentTimeMillis() = calculate time elapsed (pg 793)
 -60,000 milliseconds = 1 minute 6000 milliseconds = 1 second
 - For calculating user input accuracy use pg 256, 778, 681
+-NEW //pg 651 lets you compare two strings and 665 may help as well
 
 
 
@@ -34,6 +35,7 @@ Notes:Decided to just cross check user input with dictionary, so far can count h
 working dictionary, but still need tp cross check user input wih dictionary either one word are a time, or just the
 string as a whole but then would have to use idea mentioned above
 
+
 */
 import java.io.*;
 import java.util.*;
@@ -42,27 +44,48 @@ public class TypingSpeed
     public static void main(String[]args) throws FileNotFoundException {
         //Collecting formation
         System.out.println("\nHello & Welcome to Typing Speed Tester!");
-        System.out.println("It's time to type how fast can type! \nGo ahead and start typing! \nAs soon as your done click enter, to stop the timer and get your results!");
-        Scanner input = new Scanner(System.in);
-        long startTime = System.currentTimeMillis();
-        String s1 = input.nextLine();
-        long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
-        double t = (endTime - startTime)/6000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
-        //Calculating Speed
-        System.out.println("Elapsed time in seconds:" + t);
-        System.out.println("\nLength of input as characters: " + s1.length());
-        int amount = s1.length();
-        double s = amount/t; //divides time in seconds by the number of characters
-        double sm = s*60;
-        System.out.println("Your typing speed as characters per minute is: \n " + s + " Characters Per-second \nAnd therefore: \n" + sm + " Characters Per-minute.");
-        String[] array = s1.split(" "); //puts input into an array
-        int r = array.length;     //length by # of words:  r
-        double l = r/t; //divides time in seconds by the number of words
-        double m = l*60;
-        System.out.println("\nLength of input as words: " + r);
-        System.out.println("Your typing speed as words per minute is:\n " + r + " Words Per-second \nAnd therefore: \n" + m + " Words Per-minute.");
+        int retry = 0;
+        while (retry != 1) {
+            System.out.println("It's time to type how fast can type!\nAs soon as your done click enter, to stop the timer and get your results!");
+            System.out.println("Please input the following words: \nGo ahead and start typing!");
+            String frog = "There once was a little frog named Frog. Frog the frog lived on a lily pod in a pond. He quite enjoyed his time on the pod in the pond. But he also felt quite lonely because he was the only frog on the only lily pod in the whole pond.";
+            System.out.println(frog);
+            Scanner input = new Scanner(System.in);
+            long startTime = System.currentTimeMillis();
+            String s1 = input.nextLine();
+            long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
+            double t = (endTime - startTime) / 6000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
+            //Calculating Speed
+            System.out.println("Elapsed time in seconds:" + t);
+            System.out.println("\nLength of input as characters: " + s1.length());
+            int amount = s1.length();
+            double s = amount / t; //divides time in seconds by the number of characters
+            double sm = s * 60;
+            System.out.println("Your typing speed as characters per minute is: \n " + s + " Characters Per-second \nAnd therefore: \n" + sm + " Characters Per-minute.");
+            String[] array = s1.split(" "); //puts input into an array
+            int r = array.length;     //length by # of words:  r
+            double l = r / t; //divides time in seconds by the number of words
+            double m = l * 60;
+            System.out.println("\nLength of input as words: " + r);
+            System.out.println("Your typing speed as words per minute is:\n" + l + " Words Per-second \nAnd therefore: \n" + m + " Words Per-minute.");
 
-        //Calculating Accuracy
+            //Calculating Accuracy
+            //cross-checking it with a given string instead of the spell check thing
+            if (frog.compareTo(s1) != 0) {
+                System.out.println("Input is NOT equal to than given text");
+
+                if (frog.compareTo(s1) < 0) {
+                    System.out.println("Input is less than given text");
+                } else if (frog.compareTo(s1) > 0) {
+                    System.out.println("Input is greater than given text");
+                }
+            }
+            if (frog.compareTo(s1) == 0) {
+                System.out.println("Input is equal to given text! \nYou have a 100% accuracy!! \nCongratulations! \nThank you for playing tying speed tester!");
+            }
+            System.out.println("Would you like to play again? if not enter 1 if so please enter anything else.");
+        }
+
         //cross-checking input with dictionary
         //System.out.println("Searching for whether a word is in the dictionary/the mentioned file or not");
         Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\words.txt"));
@@ -78,11 +101,12 @@ public class TypingSpeed
         //450-451 if we give the user what o input and  have to check how accurate it is
 
         //94, runs list backwards so in this case starting at r (the number of words in the array and worked backwards till 1
-        for (int i=r; i>=1; i--)
-        {
-            System.out.println(i + " ");
-        }
+        //for (int i=r; i>=1; i--)
+        //{
+        //    System.out.println(i + " ");
+       // }
 
+        /*
         while (in.hasNext())
         {
             String word = in.next();
@@ -102,5 +126,7 @@ public class TypingSpeed
             else
                 { System.out.println(target + " is not found");}
         }
+
+         */
     }
 }
