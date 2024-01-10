@@ -41,11 +41,14 @@ import java.io.*;
 import java.util.*;
 public class TypingSpeed
 {
-    public static void main(String[]args) throws FileNotFoundException {
+    public static void main(String[]args) throws FileNotFoundException
+    {
         //Collecting formation
         System.out.println("\nHello & Welcome to Typing Speed Tester!");
         int retry = 0;
-        while (retry != 1) {
+        int num = 1;
+        while (retry != num)
+        {
             System.out.println("It's time to type how fast can type!\nAs soon as your done click enter, to stop the timer and get your results!");
             System.out.println("Please input the following words: \nGo ahead and start typing!");
             String frog = "There once was a little frog named Frog. Frog the frog lived on a lily pod in a pond. He quite enjoyed his time on the pod in the pond. But he also felt quite lonely because he was the only frog on the only lily pod in the whole pond.";
@@ -75,21 +78,30 @@ public class TypingSpeed
                 System.out.println("Input is NOT equal to than given text");
 
                 if (frog.compareTo(s1) < 0) {
-                    System.out.println("Input is less than given text");
-                } else if (frog.compareTo(s1) > 0) {
                     System.out.println("Input is greater than given text");
+                } else if (frog.compareTo(s1) > 0) {
+                    System.out.println("Input is less than given text");
                 }
             }
             if (frog.compareTo(s1) == 0) {
                 System.out.println("Input is equal to given text! \nYou have a 100% accuracy!! \nCongratulations! \nThank you for playing tying speed tester!");
             }
             System.out.println("Would you like to play again? if not enter 1 if so please enter anything else.");
+            Scanner input2 = new Scanner(System.in);
+            //System.out.println(input2);
+            //if (input2 = 1)
+            {
+                retry = 1;
+            }
+            //num == input2;
+            //make it so retry equals input2 and then can turn in
+            //retry == input2;
         }
 
         //cross-checking input with dictionary
         //System.out.println("Searching for whether a word is in the dictionary/the mentioned file or not");
-        Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\words.txt"));
-        List<String> words = new ArrayList<String>();
+        //Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\words.txt"));
+       // List<String> words = new ArrayList<String>();
 
         //Change while, to be while the array is less than zero break start at the last word in the array and work its way
         // backwards till there are no more words to check OR till the program reaches the amount of words in the list
