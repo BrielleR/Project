@@ -6,8 +6,6 @@ Pages used: Chapter 13, pg 396, pg 397, 162 for counting the string stuff, timer
 - For calculating user input accuracy use pg 256, 778, 681
 -NEW //pg 651 lets you compare two strings and 665 may help as well
 
-
-
 Progress notes
  Date:  10/18/23
  Notes: Have a working timer, can ask user for input, however haven't found how to count how many words are in the
@@ -34,8 +32,9 @@ Date:11/15/23
 Notes:Decided to just cross check user input with dictionary, so far can count how many words the user input and have a
 working dictionary, but still need tp cross check user input wih dictionary either one word are a time, or just the
 string as a whole but then would have to use idea mentioned above
-
-
+Date: 1/12/24
+Notes: Took like a month+ off but now complete, added a part that Lets user choose if they would like to retry,
+however error occurs when user takes less than a second to type
 */
 import java.io.*;
 import java.util.*;
@@ -43,7 +42,7 @@ public class TypingSpeed
 {
     public static void main(String[]args) throws FileNotFoundException
     {
-        //Collecting formation
+        //Collecting information
         System.out.println("\nHello & Welcome to Typing Speed Tester!");
         int retry = 0;
         int num = 1;
@@ -71,74 +70,22 @@ public class TypingSpeed
             double m = l * 60;
             System.out.println("\nLength of input as words: " + r);
             System.out.println("Your typing speed as words per minute is:\n" + l + " Words Per-second \nAnd therefore: \n" + m + " Words Per-minute.");
-
             //Calculating Accuracy
-            //cross-checking it with a given string instead of the spell check thing
+            //cross-checking it with a given string instead of the spell check thing(?) and gives results
             if (frog.compareTo(s1) != 0) {
                 System.out.println("Input is NOT equal to than given text");
 
                 if (frog.compareTo(s1) < 0) {
                     System.out.println("Input is greater than given text");
                 } else if (frog.compareTo(s1) > 0) {
-                    System.out.println("Input is less than given text");
-                }
+                    System.out.println("Input is less than given text");}
             }
             if (frog.compareTo(s1) == 0) {
-                System.out.println("Input is equal to given text! \nYou have a 100% accuracy!! \nCongratulations! \nThank you for playing tying speed tester!");
-            }
+                System.out.println("Input is equal to given text! \nYou have a 100% accuracy!! \nCongratulations! \nThank you for playing tying speed tester!");}
+            //Lets user choose if they would like to retry
             System.out.println("Would you like to play again? if not enter 1 if so please enter anything else.");
-            Scanner input2 = new Scanner(System.in);
-            //System.out.println(input2);
-            //if (input2 = 1)
-            {
-                retry = 1;
-            }
-            //num == input2;
-            //make it so retry equals input2 and then can turn in
-            //retry == input2;
+            Scanner choice = new Scanner(System.in);
+            retry = Integer.parseInt(choice.nextLine());
         }
-
-        //cross-checking input with dictionary
-        //System.out.println("Searching for whether a word is in the dictionary/the mentioned file or not");
-        //Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\words.txt"));
-       // List<String> words = new ArrayList<String>();
-
-        //Change while, to be while the array is less than zero break start at the last word in the array and work its way
-        // backwards till there are no more words to check OR till the program reaches the amount of words in the list
-        // and once the last word is checked in the dictionary end loop, so maybe change the while loop to a for loop
-        // because that will let us look into each word individually look into pg 443
-        //also maybe make an int accuracy = r; and then everytime a word is not found in the dictionary subtract 1
-        // from accuracy and once the for loop is broken out put accuracy out of r (accuracy + "/" + r);
-
-        //450-451 if we give the user what o input and  have to check how accurate it is
-
-        //94, runs list backwards so in this case starting at r (the number of words in the array and worked backwards till 1
-        //for (int i=r; i>=1; i--)
-        //{
-        //    System.out.println(i + " ");
-       // }
-
-        /*
-        while (in.hasNext())
-        {
-            String word = in.next();
-            words.add(word);
-        }
-        Scanner console = new Scanner(System.in);
-        while(true)
-        {
-            System.out.print("Word: (Enter to quit)?");
-            String target = console.nextLine(); //change this so instead of asking for user input checks users input with the file given and saying whether everything input was found in file
-
-            if (target.trim().length() == 0)
-                { break;}
-            int index = Collections.binarySearch(words, target);
-            if (index >= 0)
-                { System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());}
-            else
-                { System.out.println(target + " is not found");}
-        }
-
-         */
     }
 }

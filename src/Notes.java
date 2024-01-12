@@ -137,4 +137,49 @@ public class Notes
         //reference chapter 14 823 - 877
         JOptionPane.showMessageDialog(null, "Welcome to Blank");
     }*/
+//1/12/14 extra notes from TST:
+
+
+//cross-checking input with dictionary
+//System.out.println("Searching for whether a word is in the dictionary/the mentioned file or not");
+//Scanner in = new Scanner(new File("C:\\Users\\rozebri\\IdeaProjects\\Project\\words.txt"));
+// List<String> words = new ArrayList<String>();
+
+//Change while, to be while the array is less than zero break start at the last word in the array and work its way
+// backwards till there are no more words to check OR till the program reaches the amount of words in the list
+// and once the last word is checked in the dictionary end loop, so maybe change the while loop to a for loop
+// because that will let us look into each word individually look into pg 443
+//also maybe make an int accuracy = r; and then everytime a word is not found in the dictionary subtract 1
+// from accuracy and once the for loop is broken out put accuracy out of r (accuracy + "/" + r);
+
+//450-451 if we give the user what o input and  have to check how accurate it is
+
+//94, runs list backwards so in this case starting at r (the number of words in the array and worked backwards till 1
+//for (int i=r; i>=1; i--)
+//{
+//    System.out.println(i + " ");
+// }
+
+        /*
+        while (in.hasNext())
+        {
+            String word = in.next();
+            words.add(word);
+        }
+        Scanner console = new Scanner(System.in);
+        while(true)
+        {
+            System.out.print("Word: (Enter to quit)?");
+            String target = console.nextLine(); //change this so instead of asking for user input checks users input with the file given and saying whether everything input was found in file
+
+            if (target.trim().length() == 0)
+                { break;}
+            int index = Collections.binarySearch(words, target);
+            if (index >= 0)
+                { System.out.println("\"" + target + "\" is word #" + index + " of " + words.size());}
+            else
+                { System.out.println(target + " is not found");}
+        }
+
+         */
 

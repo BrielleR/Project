@@ -22,6 +22,7 @@ a word can't really apply till I add what the word is whether their input matche
 Date:11/28/23
 Notes:Fixed it so the file reading part ends when you click enter, unnecessary but at least it works now, fixed it so
 if user input characters less than or greater than 5 then it out put one time what their error was no longer infinitely loops
+
 */
 import java.io.*;
 import java.util.*;
