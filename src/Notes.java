@@ -1,5 +1,5 @@
 /*Brielle Roze
-Semester 1 Projects complete 2/5
+Semester 1 Projects complete 2/5 current grade C-
 Project 1: Rock Paper Scissors
 Project 2: Maze
 *must start to use lists and classes

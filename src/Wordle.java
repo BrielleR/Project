@@ -2,27 +2,29 @@
 Project 4: Wordle
 Reference Pages used:
 11/8/23 - 11/_/23
-Date:11/8/23
+    Date:11/8/23
 Notes: Mostly just research: Use pg 778, pg 681 (must use lists and classes) THOUGHT: to keep track of their attempts
 use pg 683 and imagine it as words.add("x"); x being the users input and count how many words are in the string to
 keep track of how many words they have tried as all of them will be added to the list then maybe make a loop around
 it that if the list reaches five words then game over and the user fails and can either rest game but like have
  another word the next time round
 or just hit enter and be done
-Date: 11/27/23
+    Date: 11/27/23
 Notes: Check for if users input has 5 characters, pick a word randomly from file, then check if any of the characters
 from the user input are the same as the random 5-letter word selected from the file then tell user if any match and
 which letters match as well as if there in the right place.
-Date: 11/28/23
+    Date: 11/28/23
 Notes: Can now count whether the user has a correct number of characters (5 only) in their input, still need to add a
 working loop back to the start not just end when user has less that needed input or more (right now when inout is too
 big or if to small just endlessly tells user that), and found a way to keep track of how many times they have guessed
 a word can't really apply till I add what the word is whether their input matches it in any way, and prompt the user
  to input another word.
-Date:11/28/23
+    Date:11/28/23
 Notes:Fixed it so the file reading part ends when you click enter, unnecessary but at least it works now, fixed it so
 if user input characters less than or greater than 5 then it out put one time what their error was no longer infinitely loops
-
+    Date: 12/5/23
+Notes: MAde another word-le assignment, this ones fine but it's starting to get messy and not sure how to get some parts
+of the code to do what it needs with the other code so going to start new and reference this as more of a notes on structure page.
 */
 import java.io.*;
 import java.util.*;
