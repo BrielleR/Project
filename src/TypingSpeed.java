@@ -1,5 +1,6 @@
 /*Brielle Roze
 Project 3: Typing Speed Tester
+10/18/23 - completed on 1/12/24 tuned in on 1/22/24 fixed some stuff 1/23/24 got feedback on turned in one on 1/24
 Pages used: Chapter 13, pg 396, pg 397, 162 for counting the string stuff, timer code either on 870 or 793, -163-164 reading for white spaces but using tokens, 891-892 or 902
 -System.currentTimeMillis() = calculate time elapsed (pg 793)
 -60,000 milliseconds = 1 minute 6000 milliseconds = 1 second
@@ -69,18 +70,18 @@ public class TypingSpeed
                 long startTime = System.currentTimeMillis();
                 String s1 = input.nextLine();
                 long endTime = System.currentTimeMillis(); // Calculates time elapsed by millisecond's pg 793
-                double t = (endTime - startTime) / 6000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
+                double t = (endTime - startTime) / 1000; // goes from milliseconds to seconds // Since it's calculated in ms must divide by 6000 to get sec
                 //Calculating Speed
                 System.out.println("Elapsed time in seconds:" + t);
                 System.out.println("\nLength of input as characters: " + s1.length());
                 int amount = s1.length();
                 double s = amount / t; //divides time in seconds by the number of characters
-                double sm = s * 60;
+                double sm = s / 60;
                 System.out.println("Your typing speed as characters per minute is: \n " + s + " Characters Per-second \nAnd therefore: \n" + sm + " Characters Per-minute.");
                 String[] array = s1.split(" "); //puts input into an array
                 int r = array.length;     //length by # of words:  r
                 double l = r / t; //divides time in seconds by the number of words
-                double m = l * 60;
+                double m = l / 60;
                 System.out.println("\nLength of input as words: " + r);
                 System.out.println("Your typing speed as words per minute is:\n" + l + " Words Per-second \nAnd therefore: \n" + m + " Words Per-minute.");
                 //Calculating Accuracy

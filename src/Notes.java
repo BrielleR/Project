@@ -1,10 +1,10 @@
 /*Brielle Roze
-Semester 1 Projects complete 2/5 current grade C-
-Project 1: Rock Paper Scissors
-Project 2: Maze
+Semester 1 Projects complete 4/5 current grade C-
+Project 1: Rock Paper Scissors _/_/23 - 10/6/23
+Project 2: Maze COMPLETED 10/10/23 - 10/11/23
 *must start to use lists and classes
-Project 3: Typing Speed
-Project 4: Word-le pg 778
+Project 3: Typing Speed COMPLETED 10/18/23 - 1/12/24
+Project 4: Word-le COMPLETED 11/8/23 - 1/28/24
 Project 5: Mastermind (lots of requirements check GS05-03)
 Other Project options:
 RPG Use page(s) 824 - 827
@@ -29,6 +29,7 @@ public class Notes
 {
     public static void main (String[] args) throws FileNotFoundException
     {
+
         /*
         //Compares users input to what they should have input, other option for finding accuracy of TST
         String s = "blah blah blah"; //what you want the user to input

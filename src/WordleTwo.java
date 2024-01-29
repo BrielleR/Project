@@ -1,5 +1,20 @@
 /*Brielle Roze
 (Same as previous Wordle Proj except this one has a different approach)
+Book and etc. notes:
+pg 694:
+"
+HashSet is the general-purpose set class, while
+TreeSet offers a few advantages that will be discussed later. If you wanted to store a
+set of String values, you could write code like the following:
+Set<String> stooges = new HashSet<String>();
+stooges.add("Larry");
+stooges.add("Moe");
+stooges.add("Curly");
+stooges.add("Moe"); // duplicate, won't be added
+stooges.add("Shemp");
+stooges.add("Moe"); // duplicate, won't be added
+"
+Progress Notes:
     Date: 12/5/23
 Notes: I think rather than trying to randomly select the five-letter word from a file (Can read a file and stuff but
 don't know how to base on their location search for one, just randomly select a word from an array or list and hav
@@ -14,6 +29,10 @@ provide them an answer but since it's not an actual word would defeat the diffic
 checker need to add something so that the after reading the users input and confirming length and accuracy it now tells
 the user what letter from their input are in the final word and if their in the correct place, as well as have to add
 code that randomly selects a five-letter word, maybe frm a given list the user has access to(?)
+    Date:1/24/24
+Notes: First need to work on the computer generating the random five-letter word as well as spell checking user input and see if
+it's a real five-letter word before continuing then when the user has input their first word next tell them what of their
+word is similar to actual word, as well as add it to how many tries they have left, and let them go for a second try, third, fourth, fifth, and each time spell check and compare and return information on whats correct.
 */
 import java.io.*;
 import java.util.*;
@@ -24,20 +43,33 @@ import java.util.List;
 import java.util.Scanner;
 public class WordleTwo
 {
-    //No clue what this commentated out part was for
-    //private int word;
-   // public WordleTwo(int word)
-    //{
-     //   this.word = word;
-    //}
+//No clue what this commentated out part was for
+//private int word;
+//public WordleTwo(int word)
+//{this.word = word;}
     public static void main(String[] args)
     {
         int retry = 0;
         int num = 1;
         while (retry != num) {
             System.out.println("Welcome to Word-le! You will get five tries to guess a word. Please input a 5 letter word:");
-            //HAve computer select random five-letter word perhaps from given list, rather than some whole 'dictionary' of just 5-letter words, because that would require file reading and there are easier ways.
+            //Have computer select random five-letter word perhaps from given list, rather than some whole 'dictionary' of just 5-letter words, because that would require file reading and there are easier ways.
             //random numbers {used page 307-308
+            /*Wordle Words:
+            mends
+            ratio
+            lucky
+            later
+            guess
+            build
+            debug
+            adieu
+            found
+            paper
+            bloat
+            watch
+            */
+
             Random r = new Random();
             int number = r.nextInt(3) + 1; // random number from 1 to 3
             System.out.println();
@@ -52,7 +84,6 @@ public class WordleTwo
             else {
                 System.out.println("Error in computer output \n");
             }
-
             //get user input and evaluates it
             Scanner input = new Scanner(System.in);
             String s1 = input.nextLine();
@@ -74,6 +105,10 @@ public class WordleTwo
                     // to the array and once the array has 5 words GAME OVER
                 }
             }
+        //honestly the following is meant to now that the user has inout their first word next tell them what of their
+        // word is similar to actual word, as well as add it to how many tries they  have left, and let them go for a
+        // second try. But for now need to work on generating the random five-letter word as well as spell checking user
+        // input and see if it's a real five-letter word before continuing to this part.
         Scanner input = new Scanner(System.in);
         String s1 = input.nextLine();
         String[] array = s1.split(" "); //puts input into an array
