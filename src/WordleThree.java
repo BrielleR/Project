@@ -4,8 +4,10 @@ Project 4
 NOTES:
 (Same as previous Wordle Proj(s) except this one has a different approach)
 Book & etc. notes:
-pg 694:
 pg 778
+426 - arrays and more array info
+pg 438 - Random access with arrays
+pg 694:
 "
 HashSet is the general-purpose set class, while
 TreeSet offers a few advantages that will be discussed later. If you wanted to store a
@@ -126,11 +128,11 @@ public class WordleThree {
                     //time to give the user input, check the users guess as well as give feedback through coloring the letters to let them know how accurate their guess is
                     for (int i = 0; i < 5; i++) {
                         if (guess[i] == answer.charAt(i)) {
-                            System.out.println("\033[1;32m" + guess[i] + "\033[0m"); //changes correct letter/place Green
+                            System.out.print("\033[1;32m" + guess[i] + "\033[0m"); //changes correct letter/place Green
                         } else if (answer.contains(Character.toString(guess[i]))) {
-                            System.out.println("\033[1;33m" + guess[i] + "\033[0m"); //changes correct letter wrong place Yellow
+                            System.out.print("\033[1;33m" + guess[i] + "\033[0m"); //changes correct letter wrong place Yellow
                         } else {
-                            System.out.println("\033[1;34m" + guess[i] + "\033[0m"); //changes wrong letter wrong place Blue
+                            System.out.print("\033[1;34m" + guess[i] + "\033[0m"); //changes wrong letter wrong place Blue
                         }
                     }
                     System.out.println();
