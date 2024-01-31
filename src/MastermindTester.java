@@ -1,6 +1,8 @@
 import java.io.FileReader;
 import java.util.Scanner;
-
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
 public class MastermindTester
 {
     private static final String testFilename = "mastermind_4p6c.txt";
@@ -29,13 +31,30 @@ public class MastermindTester
             {
                 if (guessDigits[i] == secretDigits[i]) {
                     b++;
-                } else if (Arrays. secretDigits.contains(Character.toString(guessDigits[i]))) {
-                    w++;
+                }
+                //else if (secretDigits.contains(Character.toString(guessDigits[i])))
+
+                //else if (secretDigits.equals(Character.toString(guessDigits[i]))) // else if (answer.contains(Character.toString(guess[i]))) {
+                /*
+                else if (Arrays.asList(secretDigits).contains(guessDigits[i]))
+                {
+                   w++;
+                }
+                 */
+                else
+                {
+                    for (byte by: secretDigits)
+                    {
+                        if (by == guessDigits[i])
+                        {
+                            w++;
+                        }
+                    }
                 }
             }
-/*
 
-            for (int i = 0; i < 4; i++) {
+            /*
+              for (int i = 0; i < 4; i++) {
                 if (guessDigits[i] == secretDigits[i]) {
                     b++;
                     used |= 1 << i;
@@ -49,8 +68,7 @@ public class MastermindTester
                     }
                 }
             }
-
- */
+            */
 
             // Return the hit counts in the order required!
             return new int[] {b, w};
