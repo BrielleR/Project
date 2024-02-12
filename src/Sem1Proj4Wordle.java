@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class Wordle
+public class Sem1Proj4Wordle
 {
     public static void main(String[]args) throws FileNotFoundException {
         System.out.println("Welcome to Word-le! Please input a 5 letter word:");

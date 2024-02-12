@@ -98,7 +98,7 @@ not doing that :-} besides just because the game is easy doesn't mean its not fu
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
-public class WordleThree {
+public class Sem1Proj4WordleThree {
     public static void main(String[] args) {
         String[] wordList = {"mends", "ratio", "lucky", "later", "guess", "build", "debug", "adieu", "found", "paper", "bloat", "watch"}; //list of five-letter words
         String answer = wordList[new Random().nextInt(wordList.length)]; //picks random word from the list

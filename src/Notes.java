@@ -1,30 +1,82 @@
-
 /*Brielle Roze
-Semester 1 Projects complete 4/5 current grade C-
-Project 1: Rock Paper Scissors _/_/23 - 10/6/23
+Semester 1 Projects complete 5/5 current grade B
+Project 1: Rock Paper Scissors _/_/23 - 10/6/23 COMPLETED
 Project 2: Maze COMPLETED 10/10/23 - 10/11/23
 *must start to use lists and classes
 Project 3: Typing Speed COMPLETED 10/18/23 - 1/12/24
 Project 4: Word-le COMPLETED 11/8/23 - 1/28/24
-Project 5: Mastermind (lots of requirements check GS05-03)
+Project 5: Mastermind (lots of requirements check GS05-03) COMPLETED
 Other Project options:
 RPG Use page(s) 824 - 827
 Adventure Use strings or page(s) 824 - 827
 
-Semester 2 Projects complete 0/5
-Project 1: Notes Application page 827, 857
-Project 2: Sudoku use page 831. 852
-Project 3:Levenshtein (Required)
-Project 4: Levenshtein the shortest path
-Project 5: Conways Game of Life
-Other Project options:
+Semester 2 Projects complete 0/4
+Project 1: (due 2/29/24) Conways Game of Life OR Notes Application page 827, 857 OR Sudoku use page 831. 852
+Project 2: (3/29/24) Recursion Goal Sheet(aka GS11) 0/5 (
+Project 3: (due 4/29/24)
+Project 4: (due 5/3/24)Levenshtein (Required) (Don't need to but 2x for Levenshtein the shortest paths)
+Sem 1 Other Project options:
 Solitaire use 780 - 781
+
+SEM 2 Notes:
+Proj 1 Recursion Goal Sheet (R)
+    - (aka GS11)
+    - (due 2/29/24) (//24-//24)
+    - (Chapter 12)(info: 744-789 prob: 790-799 online v)
+    - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet10.md
+    - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet11.md
+    - CH12:748     Complete so far 0/7: found notes for 3/7
+
+    - Problem GS10-02 - writeSquares  (BJP Ch 12 Ex 6)
+        (pg 764  helps with making squares & handling errors, pg __ helps with sorting squares
+
+    - Problem GS10-04 - Merge Sort (double) (BJP Ch 13 Proj 1)
+        (pg
+    - starString (GS11-01) (BJP Ch 12 Ex 1) ,
+        (pg762, talks about math pow for have ints to the nth power, pg 765  helps with making squares & handling errors,
+    - writeNums  (GS11-02)(BJP Ch 12 Ex 2)
+        (pg 754/762, first make a regular count down with base for if n is 0, then prints out n then n- 1, then reverse the string/list)
+    - writeSequence (GS11-03)(BJP Ch 12 Ex 3)
+        (pg
+    - sumTo (GS11-04)(BJP Ch 12 Ex 9) ????
+        (pg
+    - Fibonacci (GS11-05)(BJP Ch 12 Problem 16) (more efficient recursive)
+
+Proj 2 Path Following
+    - (due 3/29/24)  (//24-//24)
+
+Proj 3 ______
+    - (due 4/29/24) (//24-//24)
+
+Proj 4 Levenshtein (R)(lists,files,recursion)
+    - (due 5/3/24) (//24-//24)
+    - (GS14-01)(BJP Ch 11 project 1) https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet14.md
+    - https://en.wikipedia.org/wiki/Levenshtein_distance
+
+OTHER To-Do:
+    -Inquiry Letter (due 2/5/24)
+    -Leadership 250 (due 2/8/24)
+    -Leadership 250 (due 5/13/24)
+    -Oral Presentation - Project (due by 5/30/24)
+    -GS10 (due 2/16/24)
+    -GS11 (due 3/01/24) *(R) (Proj 2 Recursion Goal Sheet)
+    -GS12 (due 3/15/24)
+    -GS13 (due 3/29/24)
+    -AP Practice (on College Board and other)
+
+Sem 2 Other Project options (proj 1 and 3 options):
+-Conways Game of Life (arrays,lists)**
+-Notes Application (files) (page 827, 857)
+-Sudoku (lists, files, recursion) (use page 831. 852) *
+-Solitaire (classes, lists) (use 780 - 781) *
+-Maze Generation (lists,files) *
+-Path Following(recursion)
+
 */
 import java.io.*;
 import java.util.Scanner;
 import java.util.*;
 import java.util.List;
-
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;

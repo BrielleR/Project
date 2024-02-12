@@ -1,9 +1,7 @@
 import java.io.FileReader;
 import java.util.Scanner;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Random;
-public class MastermindTester
+
+public class Sem1Proj5MastermindTester
 {
     private static final String testFilename = "mastermind_4p6c.txt";
 

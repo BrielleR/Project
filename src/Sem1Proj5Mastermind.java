@@ -6,7 +6,7 @@ Notes will not be printed (cause there like 62 lines) but are available to be se
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
-public class Mastermind {
+public class Sem1Proj5Mastermind {
 
     public static void main(String[] args) {
         String[] wordList = {"6684"}; //list of four-digit number, in reality the list would be longer but in this case

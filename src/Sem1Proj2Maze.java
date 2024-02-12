@@ -5,7 +5,7 @@ Turned in/Printed: 11/2/23
 Must include 25 rooms, also made it so all rooms except the first one the user can choose to restart back at one
  */
 import java.util.*;
-public class Maze
+public class Sem1Proj2Maze
 {
     public static void main(String[]args)
     {

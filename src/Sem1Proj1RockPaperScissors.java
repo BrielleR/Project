@@ -3,7 +3,7 @@ Project 1: Rock, Paper, Scissors
 turned in 10/6/23
 */
 import java.util.*;
-public class RockPaperScissors
+public class Sem1Proj1RockPaperScissors
 {
     public static void main(String[]args) {
         //Ask for user input

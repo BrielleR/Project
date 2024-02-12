@@ -46,7 +46,7 @@ the intro the user can choose to either enter 0 and start the game or enter 1 an
 this so it would make more sense and have a better description, before  was to vague, anyway now its more complete
 */
 import java.util.*;
-public class TypingSpeed
+public class Sem1Proj3TypingSpeed
 {
     public static void main(String[]args)
     {

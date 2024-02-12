@@ -34,14 +34,9 @@ Notes: First need to work on the computer generating the random five-letter word
 it's a real five-letter word before continuing then when the user has input their first word next tell them what of their
 word is similar to actual word, as well as add it to how many tries they have left, and let them go for a second try, third, fourth, fifth, and each time spell check and compare and return information on whats correct.
 */
-import java.io.*;
 import java.util.*;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
-public class WordleTwo
+public class Sem1Proj4WordleTwo
 {
 //No clue what this commentated out part was for
 //private int word;
