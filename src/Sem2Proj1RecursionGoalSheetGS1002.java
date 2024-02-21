@@ -23,6 +23,7 @@ return x * pow(x, y – 1);
 }
 }
         (pg 764  helps with making squares & handling errors, pg 94/148/203/273/336 helps with identifying odd or even,pg __ helps with sorting squares
+-837, split array into two halves and sort each then merge back together
 Date:2/13/24
 Notes:First of 7 parts for Proj 1, due in 16 days, first need to make it so takes user input and squares it, then sorts it the greatest even to the least even then greatest odd to the least even,
  */

@@ -36,7 +36,7 @@ word is similar to actual word, as well as add it to how many tries they have le
 */
 import java.util.*;
 import java.util.Scanner;
-public class Sem1Proj4WordleTwo
+public class Sem1Proj4Wordle2
 {
 //No clue what this commentated out part was for
 //private int word;

@@ -1,5 +1,5 @@
 /*Brielle Roze
-writeSequence (GS11-03)(BJP Ch 12 Ex 3)
+writeSequence (GS11-03)(BJP Ch 12 Ex 3) pg795
     - Write a recursive method called writeSequence that accepts an integer n as a parameter and prints to the console
      a symmetric sequence of n numbers composed of descending integers that ends in 1, followed by a sequence of
      ascending integers that begins with 1. When n is odd, the sequence has a single 1 in the middle, but when n is
@@ -13,5 +13,11 @@ writeSequence (GS11-03)(BJP Ch 12 Ex 3)
         (pg
 
  */
+import java.util.Scanner;
+import java.util.*;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
 public class Sem2Proj1RecursionGoalSheetGS1103 {
 }
