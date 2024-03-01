@@ -162,7 +162,7 @@ public class Notes
 /*
         //List<Integer>
         //pg 778 word work for Typing speed test if I make existing file that is a dictionary, to have a spell check for TST
-        System.out.println("Searching for whether or not a word is in the dictionary/the mentioned file");
+        System.out.println("Searching for whether a word is in the dictionary/the mentioned file");
 
         Scanner in = new Scanner(new File("/Users/rozebri/Project/words.txt"));
         List<String> words = new ArrayList<String>();

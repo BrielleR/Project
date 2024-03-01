@@ -6,7 +6,7 @@ Problem GS10-04 - Merge Sort (double) (BJP Ch 13 Proj 1) pg 846
     - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet10.md
     - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet11.md
     - CH12:748     Complete so far 0/7: found notes for 3/7
-    - mereSort with numbers 839
+    - mergeSort with numbers 839
 
         (pg 809
         // sort Strings using case-insensitive Comparator
@@ -31,10 +31,15 @@ public class Sem2Proj1RecursionGoalSheetGS1004
     {
         System.out.println("Hello and welcome to reading a series of input lines and sorting them into alphabetical order, regardless of case of words.");
    System.out.println("please inout a word you would like added to the list");
-    Scanner input = new Scanner(System.in);
-    String[] strings = {"hello", "And", "break"}; //list of words with different cases and in random order
-    Arrays.sort(strings, String.CASE_INSENSITIVE_ORDER); //sorts string ignores cases
-    System.out.println(Arrays.toString(strings));
+    /*
+   ArrayList<String> list = new ArrayList<String>(); //list of words with different cases and in random order
+        Scanner input = new Scanner(System.in);
+        String string = input.next();
+        list.add(input);
+    Arrays.sort(list, String.CASE_INSENSITIVE_ORDER); //sorts string ignores cases
+    System.out.println(Arrays.toString(list));
+
+     */
 
     }
 
