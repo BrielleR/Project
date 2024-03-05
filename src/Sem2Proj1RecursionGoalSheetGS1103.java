@@ -11,7 +11,9 @@ writeSequence (GS11-03)(BJP Ch 12 Ex 3) pg795
         (pg
         //reference gs11-02 but add System.out.print(n+","); before int statement, fix how it also outputs zero in
        // the middle and get rid of commas and ln to inner output statement, and throw illegal argument statement for less than 0
-       and figure out how to implement it so that when n is odd there are to 1's in the middle and when n os even there is still only one 1
+       and figure out how to implement it so that when n is odd there are two 1's in the middle and when n os even there is still only one 1
+ if (n1 % 2 != 0) {
+
  */
 import java.util.Scanner;
 import java.util.*;
@@ -36,11 +38,18 @@ public class Sem2Proj1RecursionGoalSheetGS1103 {
 
         ArrayList<Integer> list = new ArrayList<Integer>(); //list with all the versions/variables of n at the end reverse list order and output it
         System.out.println(n);
-        if (n > 1) //when the user input is greater than 1 do the following:
+
+        if (n < 0)
         {
+            throw new IllegalArgumentException("negative input: " + n); //if input is less than 0 aka neg then this throws an illegal argument exception
+        }
+        else if (n > 1) //when the user input is greater than 1 do the following:
+        {
+
             RecursionGS(n - 1); // subtract - from n
             list.add(n); //add the new n
             System.out.println(n); //output new n
+
         }
         return list; //returns int list
     }
