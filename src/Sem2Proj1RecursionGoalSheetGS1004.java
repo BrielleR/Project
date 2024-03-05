@@ -29,7 +29,8 @@ public class Sem2Proj1RecursionGoalSheetGS1004
 {
     public static void main(String[]args)
     {
-        System.out.println("Hello and welcome to reading a series of input lines and sorting them into alphabetical order, regardless of case of words.");
+        System.out.println("Hello and welcome to reading a series of input lines and sorting them into alphabetical " +
+                "order, regardless of case of words.");
    System.out.println("please inout a word you would like added to the list");
     /*
    ArrayList<String> list = new ArrayList<String>(); //list of words with different cases and in random order

@@ -39,7 +39,9 @@ public class Sem2Proj1RecursionGoalSheetGS1002
     public static void main(String[] args)
     {
         System.out.println("Welcome to Write Squares!");
-        System.out.println("Please input a whole integer it and the number that come before it will then be then squared \n Even integers will be on one side in descending order and odd on the other side in descending order.");
+        System.out.println("Please input a whole integer it and the number that come before it will then be then " +
+                "squared \n Even integers will be on one side in descending order and odd on the other side in " +
+                "descending order.");
         Scanner input = new Scanner(System.in);
         //make loop for input number to nth power, and runs through values of input, and checks for odd or event then sorts...
 

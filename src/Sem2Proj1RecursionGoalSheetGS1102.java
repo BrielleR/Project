@@ -12,11 +12,37 @@ writeNums  (GS11-02)(BJP Ch 12 Ex 2) pg 794
 
 
  */
-import java.util.Scanner;
 import java.util.*;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Random;
+
 public class Sem2Proj1RecursionGoalSheetGS1102 {
+    public static void main(String[] args) {
+        System.out.println("Welcome to GS11-02");//intro and ask user to input a number greater than 0
+
+        Scanner recur = new Scanner(System.in);
+        int n;
+        //System.out.println(n); //make it so n = what the user inputs
+
+
+    }
+
+    //String[] wordList = {
+    public static ArrayList<Integer> RecursionGS(int n)
+    {
+
+        ArrayList<Integer> list = new ArrayList<Integer>(); //list with all the versions/variables of n at the end reverse list order and output it
+        //int[] intList = {n, };
+        System.out.println(n); //outputs user input/original n
+        list.add(n); //add user input to list
+        if (n >= 0) //when the user input is greater than or equal to 0 do the following:
+        {
+            list.add(n);//do the wanted from the GS
+            RecursionGS(n - 1); // subtract - from n
+            list.add(n); //add the new n
+            System.out.println(n); //output new n
+
+        }
+        return (list); //may be unnecessary
+    }
+
 }
+
