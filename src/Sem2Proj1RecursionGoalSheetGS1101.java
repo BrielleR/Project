@@ -21,6 +21,10 @@ import java.util.Arrays;
 import java.util.Random;
 public class Sem2Proj1RecursionGoalSheetGS1101
 {
+    public static void main (String[]args)
+    {
+        System.out.println("Welcome, please inout a number and string of stars that in your number to the nth power long.");
+    }
     public static void Recursion (int n)
     {
         System.out.println( n);

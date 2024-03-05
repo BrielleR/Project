@@ -44,6 +44,7 @@ public class Sem2Proj1RecursionGoalSheetGS1002
                 "descending order.");
         Scanner input = new Scanner(System.in);
         //make loop for input number to nth power, and runs through values of input, and checks for odd or event then sorts...
-
+        //reference code from gs11-02 but also change it so no commas add ln and add a sorter to the array so even
+        //number on 1 side odd on the other or just add them to 2 different lists and output them one list after another.
     }
 }

@@ -8,7 +8,6 @@ sumTo (GS11-04)(BJP Ch 12 Ex 9) pg796
     - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet10.md
     - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet11.md
     - CH12:748     Complete so far 0/7: found notes for 3/7
-
         (pg 764 throw new IllegalArgumentException,
         doubles not ints
  */
@@ -19,4 +18,8 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 public class Sem2Proj1RecursionGoalSheetGS1104 {
+    public static void main (String[]args)
+    {
+        System.out.println("Welcome to GS11-04, \n input a number and the computer will output of the first n reciprocals, as well as calculate the same for the numbers prior to it in descending order.");
+    }
 }
