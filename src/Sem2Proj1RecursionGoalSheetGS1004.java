@@ -18,7 +18,8 @@ System.out.println(Arrays.toString(strings));
 //results alpha, bravo, Charlie, ... and so on
 
 //Scanner input = new Scanner(System.in);
-
+Date:3/6/24
+Notes:Make it so user creates the list of words, then sort the list alphabetically
  */
 import java.util.Scanner;
 import java.util.*;
@@ -30,19 +31,26 @@ public class Sem2Proj1RecursionGoalSheetGS1004
 {
     public static void main(String[]args)
     {
-        System.out.println("Hello and welcome to reading a series of input lines and sorting them into alphabetical " +
+        System.out.println("Welcome to sorting alphabetically!");
+        System.out.println("Where the computer will be reading a series of input lines and sorting them into alphabetical " +
                 "order, regardless of case of words.");
-   System.out.println("please inout a word you would like added to the list");
-    /*
+         System.out.println("please inout a word you would like added to the list");
+         Scanner input = new Scanner(System.in);
+         String s = input.nextLine();
+         WordSort(s);
+    }
+    public static void WordSort(String s)
+    {
+
+
+    }
+
+}
+ /*
    ArrayList<String> list = new ArrayList<String>(); //list of words with different cases and in random order
         Scanner input = new Scanner(System.in);
         String string = input.next();
         list.add(input);
     Arrays.sort(list, String.CASE_INSENSITIVE_ORDER); //sorts string ignores cases
     System.out.println(Arrays.toString(list));
-
      */
-
-    }
-
-}

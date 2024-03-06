@@ -13,7 +13,8 @@ writeSequence (GS11-03)(BJP Ch 12 Ex 3) pg795
        // the middle and get rid of commas and ln to inner output statement, and throw illegal argument statement for less than 0
        and figure out how to implement it so that when n is odd there are two 1's in the middle and when n os even there is still only one 1
  if (n1 % 2 != 0) {
-
+Date:
+Notes:
  */
 import java.util.Scanner;
 import java.util.*;
@@ -27,17 +28,33 @@ public class Sem2Proj1RecursionGoalSheetGS1103 {
        System.out.println("Please input a integer, the computer will then print your output and count down numbers" +
                " in descending order starting with your output ending with 1, it will then count up form n in " +
                "ascending order until it reaches your input ");
-       int n;
+
        Scanner recur = new Scanner(System.in);
-       n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-       RecursionGS(n); //call it
+       int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+       writeSequence(n); //call it
        System.out.println();//extra just so that after list is out put there's a gap between output and 'disconnect..."
    }
-    //String[] wordList = {
+
+public static void writeSequence(int n)
+{
+    if (n<0)
+    {
+        throw new IllegalStateException("negative number" + n);
+    }
+    else if (n>0)
+    {
+        System.out.println(n);
+        writeSequence(n-1);
+        System.out.println(n);
+    }
+}
+
+}
+/*
+ //String[] wordList = {
     public static ArrayList<Integer> RecursionGS(int n) {
 
         ArrayList<Integer> list = new ArrayList<Integer>(); //list with all the versions/variables of n at the end reverse list order and output it
-        System.out.println(n);
 
         if (n < 0)
         {
@@ -46,13 +63,19 @@ public class Sem2Proj1RecursionGoalSheetGS1103 {
         else if (n > 1) //when the user input is greater than 1 do the following:
         {
 
-            RecursionGS(n - 1); // subtract - from n
-            list.add(n); //add the new n
-            System.out.println(n); //output new n
+            if (n%2 ==0) {
+                RecursionGS(n - 1); // subtract - from n
+                list.add(n); //add the new n
+                System.out.println(n); //output new n
+            }
+            else
+            {
+                RecursionGS(n - 1); // subtract - from n
+                list.add(n); //add the new n
+                System.out.println(n); //output new n
+            }
 
         }
         return list; //returns int list
     }
-
-
-}
+ */

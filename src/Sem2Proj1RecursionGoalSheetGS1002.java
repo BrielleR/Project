@@ -26,6 +26,8 @@ return x * pow(x, y – 1);
 -837, split array into two halves and sort each then merge back together
 Date:2/13/24
 Notes:First of 7 parts for Proj 1, due in 16 days, first need to make it so takes user input and squares it, then sorts it the greatest even to the least even then greatest odd to the least even,
+Date:3/6/34
+Notes: Need to figure out how to do to the nth power correctly then sort the list by pos and neg
  */
 import java.io.*;
 import java.util.Scanner;
@@ -34,17 +36,79 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
-public class Sem2Proj1RecursionGoalSheetGS1002
-{
-    public static void main(String[] args)
+public class Sem2Proj1RecursionGoalSheetGS1002 {
+    public static void main(String[]args)
     {
         System.out.println("Welcome to Write Squares!");
         System.out.println("Please input a whole integer it and the number that come before it will then be then " +
                 "squared \n Even integers will be on one side in descending order and odd on the other side in " +
                 "descending order.");
-        Scanner input = new Scanner(System.in);
-        //make loop for input number to nth power, and runs through values of input, and checks for odd or event then sorts...
-        //reference code from gs11-02 but also change it so no commas add ln and add a sorter to the array so even
-        //number on 1 side odd on the other or just add them to 2 different lists and output them one list after another.
+        Scanner recur = new Scanner(System.in);
+        int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+        WriteSquares(n); //call it
     }
+    public static void WriteSquares(int n)
+    {
+        if (n < 0)
+        {
+            throw new IllegalArgumentException("negative input: " + n); //if input is less than 0 aka neg then this throws an illegal argument exception
+        }
+        else if (n > 0) //when the user input is greater than 1 do the following:
+        {
+            WriteSquares(n - 1); // subtract - from n
+            //WriteSquares(n^n);
+            // list.add(n); //add the new n
+            System.out.println(n^n); //output new n
+            /*
+            if (n % 2 == 0) {
+
+                WriteSquares(n - 1); // subtract - from n
+                WriteSquares(n*n);
+               // list.add(n); //add the new n
+                System.out.println(n); //output new n
+            } else {
+                WriteSquares(n - 1); // subtract - from n
+                WriteSquares(n*n);
+               // list.add(n); //add the new n
+                System.out.println(n); //output new n
+            }
+
+             */
+        }
+
+    }
+
 }
+
+/*
+    public static void main(String[] args) {
+        System.out.println("Welcome to Write Squares!");
+        System.out.println("Please input a whole integer it and the number that come before it will then be then " +
+                "squared \n Even integers will be on one side in descending order and odd on the other side in " +
+                "descending order.");
+        int n;
+        Scanner recur = new Scanner(System.in);
+        n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+        RecursionGS(n); //call it
+        System.out.println();//extra just so that after list is out put there's a gap between output and 'disconnect..."
+    }
+    //String[] wordList = {
+    public static ArrayList<Integer> RecursionGS(int n) {
+
+        ArrayList<Integer> list = new ArrayList<Integer>(); //list with all the versions/variables of n at the end reverse list order and output it
+        System.out.println(n);
+        if (n > 0) //when the user input is greater than 1 do the following:
+        {
+            list.add(n^n);
+           RecursionGS(n - 1); // subtract - from n
+            list.add(n); //add the new n
+            System.out.println(n+","); //output new n
+        }
+        return list; //returns int list
+    }
+
+
+}
+
+ */
+

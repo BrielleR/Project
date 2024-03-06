@@ -7,6 +7,8 @@ writeNums  (GS11-02)(BJP Ch 12 Ex 2) pg 794
     - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet11.md
     - CH12:748     Complete so far 0/7: found notes for 3/7
         (pg 754/762-765, first make a regular count down with base for if n is 0, then prints out n then n- 1, then reverse the string/list, 764 about gcd and pos and neg)
+ Date:3/6/24
+ Notes: Complete
  */
 import java.util.*;
 
@@ -17,9 +19,24 @@ public class Sem2Proj1RecursionGoalSheetGS1102 {
         int n;
         Scanner recur = new Scanner(System.in);
         n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-        RecursionGS(n); //call it
+        writeNums(n); //call it
         System.out.println();//extra just so that after list is out put there's a gap between output and 'disconnect..."
     }
+    public static void writeNums(int n)
+    {
+       if (n< 0)
+       {
+           throw new IllegalArgumentException("negative input: " + n);  //throw illegal argument exception
+       } else if (n>0) {
+           writeNums(n-1);
+           System.out.print(n + ", ");
+       }
+    }
+
+}
+
+
+    /*
     //String[] wordList = {
     public static ArrayList<Integer> RecursionGS(int n) {
 
@@ -34,6 +51,4 @@ public class Sem2Proj1RecursionGoalSheetGS1102 {
         return list; //returns int list
     }
 
-
-}
-
+     */
