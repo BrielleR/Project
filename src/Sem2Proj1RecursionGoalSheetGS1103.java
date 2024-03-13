@@ -31,24 +31,44 @@ public class Sem2Proj1RecursionGoalSheetGS1103 {
 
        Scanner recur = new Scanner(System.in);
        int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-       writeSequence(n); //call it
+       if (n%2== 0) //call if n is even
+       {
+           writeSequence1(n);
+       }
+       else if (n%2 != 0) //call if n is odd
+       {
+           writeSequence2(n);
+       }
        System.out.println();//extra just so that after list is out put there's a gap between output and 'disconnect..."
+
    }
 
-public static void writeSequence(int n)
+public static void writeSequence1(int n)
 {
     if (n<0)
     {
         throw new IllegalStateException("negative number" + n);
     }
-    else if (n>0)
+    else if (n>0) //even numbers //n%2 == 0 &&
     {
-        System.out.println(n);
-        writeSequence(n-1);
-        System.out.println(n);
+            System.out.print(n + " ");
+            writeSequence1(n - 1);
+            System.out.print(n + " ");
     }
 }
-
+public static void writeSequence2(int n)
+    {
+        if (n<0)
+        {
+            throw new IllegalStateException("negative number" + n);
+        }
+          else if (n>0) //odd numbers //n%2 != 0 &&
+    {
+        System.out.print(n + " ");
+        writeSequence2(n - 1);
+        System.out.print(n + " ");
+    }
+    }
 }
 /*
  //String[] wordList = {

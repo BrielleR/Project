@@ -14,7 +14,7 @@ import java.util.*;
 
 public class Sem2Proj1RecursionGoalSheetGS1102 {
     public static void main(String[] args) {
-        System.out.println("Welcome to GS11-02, \nPlease input a number and the computer will output counting up to " +
+        System.out.println("Welcome to GS11-02, \nPlease input a number (greater then 0) and the computer will output counting up to " +
                             "your num starting with 1.");//intro and ask user to input a number greater than 0
         int n;
         Scanner recur = new Scanner(System.in);

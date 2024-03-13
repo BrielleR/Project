@@ -18,5 +18,29 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
-public class Sem2Proj1RecursionGoalSheetGS1105 {
+public class Sem2Proj1RecursionGoalSheetGS1105
+{
+    public static void main (String[]args)
+    {
+        System.out.println("");
+
+        //Scanner recur = new Scanner(System.in);
+       // int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+        int n = 1;
+        Fibonacci(n);
+    }
+
+    public static void Fibonacci(int n)
+    {
+        if (n<0)
+        {
+            throw new IllegalStateException("negative number" + n);
+        }
+        else if (n>0 && n <40)
+        {
+            System.out.print(n + " ");
+            Fibonacci(n + n);//close to start but needs to be current number plus the previous number not plus its self
+
+        }
+    }
 }
