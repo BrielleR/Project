@@ -28,14 +28,15 @@ Date:2/13/24
 Notes:First of 7 parts for Proj 1, due in 16 days, first need to make it so takes user input and squares it, then sorts it the greatest even to the least even then greatest odd to the least even,
 Date:3/6/34
 Notes: Need to figure out how to do to the nth power correctly then sort the list by pos and neg
- */
-import java.io.*;
-import java.util.Scanner;
 import java.util.*;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
+import java.io.*;
+ */
+import java.util.Scanner;
+
 public class Sem2Proj1RecursionGoalSheetGS1002 {
     public static void main(String[]args)
     {
@@ -45,11 +46,36 @@ public class Sem2Proj1RecursionGoalSheetGS1002 {
                 "descending order.");
         Scanner recur = new Scanner(System.in);
         int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-        WriteSquares(n); //call it
+        WriteSquares1(n); //call it
     }
-    public static void WriteSquares(int n)
+    public static void WriteSquares1(int n)
     {
         if (n < 0)
+        {
+            throw new IllegalArgumentException("negative input: " + n); //if input is less than 0 aka neg then this throws an illegal argument exception
+        }
+       if ( n==0) return;
+
+         if (n % 2 != 0)
+         {
+            //WriteSquares1(n - 1);
+            System.out.print(n *n + ", ");
+            WriteSquares1(n - 2); // subtract - from n
+            //System.out.println(n * n); //output new n
+        }
+        else  {
+            WriteSquares1(n - 2); // subtract - from n
+            System.out.print(n *n + ", ");
+
+            //System.out.println(n * n); //output new n
+
+        }
+    }
+
+}
+
+/*
+if (n < 0)
         {
             throw new IllegalArgumentException("negative input: " + n); //if input is less than 0 aka neg then this throws an illegal argument exception
         }
@@ -72,13 +98,10 @@ public class Sem2Proj1RecursionGoalSheetGS1002 {
                // list.add(n); //add the new n
                 System.out.println(n); //output new n
             }
-
-             */
-        }
-
-    }
-
 }
+             */
+
+
 
 /*
     public static void main(String[] args) {
