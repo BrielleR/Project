@@ -21,5 +21,17 @@ public class Sem2Proj1RecursionGoalSheetGS1104 {
     public static void main (String[]args)
     {
         System.out.println("Welcome to GS11-04, \n input a number and the computer will output of the first n reciprocals, as well as calculate the same for the numbers prior to it in descending order.");
+        System.out.println(sumTo(2)); // should print 1.5
     }
+    public static double sumTo(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("n must be zero or greater");
+        }
+        if (n == 0) {
+            return 0.0;
+        } else {
+            return 1.0 / n + sumTo(n - 1);
+        }
+    }
+
 }

@@ -38,41 +38,33 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Sem2Proj1RecursionGoalSheetGS1002 {
-    public static void main(String[]args)
-    {
+    public static void main(String[] args) {
         System.out.println("Welcome to Write Squares!");
         System.out.println("Please input a whole integer it and the number that come before it will then be then " +
                 "squared \n Even integers will be on one side in descending order and odd on the other side in " +
                 "descending order.");
         Scanner recur = new Scanner(System.in);
-        int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-        WriteSquares1(n); //call it
-    }
-    public static void WriteSquares1(int n)
-    {
-        if (n < 0)
-        {
-            throw new IllegalArgumentException("negative input: " + n); //if input is less than 0 aka neg then this throws an illegal argument exception
-        }
-       if ( n==0) return;
-
-         if (n % 2 != 0)
-         {
-            //WriteSquares1(n - 1);
-            System.out.print(n *n + ", ");
-            WriteSquares1(n - 2); // subtract - from n
-            //System.out.println(n * n); //output new n
-        }
-        else  {
-            WriteSquares1(n - 2); // subtract - from n
-            System.out.print(n *n + ", ");
-
-            //System.out.println(n * n); //output new n
-
-        }
+        int n = Integer.parseInt(recur.nextLine()); // gets user input and also makes it n's value
+        WriteSquares1(n); // call it
     }
 
+    public static void WriteSquares1(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("negative input: " + n);
+        }
+        if (n == 0) {
+            return;
+        }
+        if (n % 2 == 0) {
+            WriteSquares1(n - 1); // print the even squares in descending order first
+            System.out.print(n * n + ", ");
+        } else {
+            System.out.print(n * n + ", ");
+            WriteSquares1(n - 1); // print the odd squares in ascending order next
+        }
+    }
 }
+
 
 /*
 if (n < 0)

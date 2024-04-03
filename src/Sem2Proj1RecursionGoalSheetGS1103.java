@@ -17,11 +17,7 @@ Date:
 Notes:
  */
 import java.util.Scanner;
-import java.util.*;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Random;
+
 public class Sem2Proj1RecursionGoalSheetGS1103 {
    public static void main (String[]args)
    {

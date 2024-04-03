@@ -20,13 +20,14 @@ System.out.println(Arrays.toString(strings));
 //Scanner input = new Scanner(System.in);
 Date:3/6/24
 Notes:Make it so user creates the list of words, then sort the list alphabetically
- */
-import java.util.Scanner;
 import java.util.*;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
+ */
+import java.util.Scanner;
+
 public class Sem2Proj1RecursionGoalSheetGS1004
 {
     public static void main(String[]args)
@@ -37,14 +38,21 @@ public class Sem2Proj1RecursionGoalSheetGS1004
          System.out.println("please inout a word you would like added to the list");
          Scanner input = new Scanner(System.in);
          String s = input.nextLine();
-         WordSort(s);
+        WordSort(s, "");
     }
-    public static void WordSort(String s)
-    {
+    public static void WordSort(String s, String prefix) {
+    if (s.isEmpty()) {
+    System.out.println(prefix);
+    return;
+}
 
-
-    }
-
+    // Recursive case:
+    // Split the input word by space and iterate through the words
+        for (String word : s.split(" ")) {
+    // Call WordSort recursively with the remaining input and the current word concatenated to the prefix
+    WordSort(s.replaceFirst("\\b" + word + "\\b", "").trim(), prefix + " " + word.toUpperCase());
+}
+}
 }
  /*
    ArrayList<String> list = new ArrayList<String>(); //list of words with different cases and in random order
