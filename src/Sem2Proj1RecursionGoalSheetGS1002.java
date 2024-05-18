@@ -40,9 +40,9 @@ import java.util.Scanner;
 public class Sem2Proj1RecursionGoalSheetGS1002 {
     public static void main(String[] args) {
         System.out.println("Welcome to Write Squares!");
-        System.out.println("Please input a whole integer it and the number that come before it will then be then " +
-                "squared \n Even integers will be on one side in descending order and odd on the other side in " +
-                "descending order.");
+        System.out.println("Please input a whole integer it and the number(s) that come before it will then be then " +
+                "squared! \n Even integers will be on one side in descending order and odd on the other side in " +
+                "ascending order.");
         Scanner recur = new Scanner(System.in);
         int n = Integer.parseInt(recur.nextLine()); // gets user input and also makes it n's value
         WriteSquares1(n); // call it
