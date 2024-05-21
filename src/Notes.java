@@ -297,3 +297,96 @@ public class Notes
          */
 
 
+
+
+//FIBONACCI
+
+//        System.out.println("Welcome to Fibonacci Sequence!");
+//        System.out.println("Please input what you want to be the first number of the sequence");
+//        for (int i = 0; i<=30; i++)
+//        {
+//            System.out.println(i + (i+1));
+//        }
+//  Scanner recur = new Scanner(System.in);
+//  int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+//System.out.println("Please input what you would like to be the second number of the sequence");
+//n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+
+//Scanner recur = new Scanner(System.in);
+// int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+//int n = 1;
+// int n = 3;
+//Fibonacci(n);
+
+
+
+//
+//    public static int Fibonacci(int n)
+//    {
+//        if (n < 3) {
+//            return 1;
+//        }
+//        else {
+//        int calcFibonacci[] = new int [n+1];
+//        calcFibonacci[1] = 1;
+//        calcFibonacci[1] = 1;
+//        return _Fibonacci(n,calcFibonacci);
+//        }
+//    }
+//    public static int _Fibonacci (int n, int Fibonaccis[])
+//    {
+//        if (Fibonaccis[n] ==0) {
+//            Fibonaccis[n] = _Fibonacci(n - 1, Fibonaccis) + _Fibonacci(n - 2, Fibonaccis);
+//        }
+//        return Fibonaccis[n];
+//        }
+//
+//    }
+
+
+/*public static void main (String[]args)
+    {
+        System.out.println("Welcome to Fibonacci Sequence!");
+        System.out.println("Please input what you want to be the first number of the sequence");
+        Scanner recur = new Scanner(System.in);
+        int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+        //System.out.println("Please input what you would like to be the second number of the sequence");
+        //n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+
+        //Scanner recur = new Scanner(System.in);
+       // int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+        //int n = 1;
+        Fibonacci(n);
+    }
+
+    public static int Fibonacci(int n)
+    {
+        if (n<3)
+        {
+            return 1;
+        }
+        else if (n>0 && n <40)
+        {
+            //System.out.println(Fibonacci(n-1) + Fibonacci(n-2));
+            return Fibonacci(n-1) + Fibonacci(n-2);
+        }
+        return n;
+    }
+
+     */
+
+/*
+ if (n<0)
+        {
+            throw new IllegalStateException("negative number" + n);
+        }
+        else if (n>0 && n <40)
+        {
+            System.out.print(n + " ");
+            Fibonacci(n + n);//close to start but needs to be current number plus the previous number not plus its self
+
+        }
+ */
+
+
+

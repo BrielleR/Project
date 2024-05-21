@@ -15,87 +15,34 @@ Fibonacci (GS11-05)(BJP Ch 12 Problem 16) (more efficient recursive) pg 794
 
 import java.util.Scanner;
 
-public class Sem2Proj1RecursionGoalSheetGS1105
-{
-    public static void main (String[]args)
-    {
-        System.out.println("Welcome to Fibonacci Sequence!");
-        System.out.println("Please input what you want to be the first number of the sequence");
-      //  Scanner recur = new Scanner(System.in);
-      //  int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-        //System.out.println("Please input what you would like to be the second number of the sequence");
-        //n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-
-        //Scanner recur = new Scanner(System.in);
-        // int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-        //int n = 1;
-        int n = 3;
-       Fibonacci(n);
-
-    }
-    public static int Fibonacci(int n)
-    {
-        if (n < 3) {
-            return 1;
-        }
-        else {
-        int calcFibonacci[] = new int [n+1];
-        calcFibonacci[1] = 1;
-        calcFibonacci[1] = 1;
-        return _Fibonacci(n,calcFibonacci);
+public class Sem2Proj1RecursionGoalSheetGS1105 {
+    private static long fibonacciHelper(int n, long prev1, long prev2) {
+        if (n == 0) {
+            return prev1;
+        } else {
+            return fibonacciHelper(n - 1, prev2, prev1 + prev2);
         }
     }
-    public static int _Fibonacci (int n, int Fibonaccis[])
-    {
-        if (Fibonaccis[n] ==0) {
-            Fibonaccis[n] = _Fibonacci(n - 1, Fibonaccis) + _Fibonacci(n - 2, Fibonaccis);
-        }
-        return Fibonaccis[n];
-        }
 
+    // Public method to calculate the nth Fibonacci number
+    public static long fibonacci(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Input must be a non-negative integer.");
+        }
+        return fibonacciHelper(n, 0, 1);
     }
 
-
-/*public static void main (String[]args)
-    {
-        System.out.println("Welcome to Fibonacci Sequence!");
-        System.out.println("Please input what you want to be the first number of the sequence");
+    public static void main(String[] args) {
+        System.out.println("Please input up to what number of the Fibonacci number sequence you want calculated");
         Scanner recur = new Scanner(System.in);
-        int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-        //System.out.println("Please input what you would like to be the second number of the sequence");
-        //n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+        int x = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
 
-        //Scanner recur = new Scanner(System.in);
-       // int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-        //int n = 1;
-        Fibonacci(n);
+        //int x = 0;
+        for (int n = 0; n <= x; n++) {
+            //int n = 9; // Example: Calculate the 10th Fibonacci number
+            long result = fibonacci(n);
+            System.out.println("Fibonacci(" + n + ") = " + result);
+
+        }
     }
-
-    public static int Fibonacci(int n)
-    {
-        if (n<3)
-        {
-            return 1;
-        }
-        else if (n>0 && n <40)
-        {
-            //System.out.println(Fibonacci(n-1) + Fibonacci(n-2));
-            return Fibonacci(n-1) + Fibonacci(n-2);
-        }
-        return n;
-    }
-
-     */
-
-/*
- if (n<0)
-        {
-            throw new IllegalStateException("negative number" + n);
-        }
-        else if (n>0 && n <40)
-        {
-            System.out.print(n + " ");
-            Fibonacci(n + n);//close to start but needs to be current number plus the previous number not plus its self
-
-        }
- */
+}

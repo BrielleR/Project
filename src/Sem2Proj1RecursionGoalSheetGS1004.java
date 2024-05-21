@@ -20,45 +20,58 @@ System.out.println(Arrays.toString(strings));
 //Scanner input = new Scanner(System.in);
 Date:3/6/24
 Notes:Make it so user creates the list of words, then sort the list alphabetically
+*/
 import java.util.*;
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
- */
+
 import java.util.Scanner;
 
 public class Sem2Proj1RecursionGoalSheetGS1004
 {
     public static void main(String[]args)
     {
-        System.out.println("Welcome to sorting alphabetically!");
-        System.out.println("Where the computer will be reading a series of input lines and sorting them into alphabetical " +
+        System.out.println("Welcome to sorting words alphabetically!");
+        System.out.println("Where the computer will be reading a series of words input by the user and sort them into alphabetical " +
                 "order, regardless of case of words.");
-         System.out.println("please inout a word you would like added to the list");
-         Scanner input = new Scanner(System.in);
-         String s = input.nextLine();
-        WordSort(s, "");
+         System.out.println("please input a word you would like added to the list");
+        ArrayList<String> list = new ArrayList<String>(); //list of words with different cases and in random order
+        Scanner input = new Scanner(System.in);
+         String one = input.nextLine();
+        list.add(one);
+        //System.out.println(list);
+        System.out.println("Please add another word to the list");
+        String two = input.nextLine();
+        list.add(two);
+        int start = 0;
+        System.out.println("Would you like to add more words to the list to be sorted? \n If so please input 0, if not please enter any other number!");
+        Scanner game = new Scanner(System.in);
+        start = Integer.parseInt(game.nextLine());
+        if (start == 0)
+        {
+            String three = input.nextLine();
+            list.add(three);
+            Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
+            System.out.println("Here is your list of words after being sorted alphabetically!" + list);
+        }
+        else
+        {
+            Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
+            System.out.println("Here is your alphabetically sorted list of input words! : " + list);
+        }
+
+
+        //Arrays.sort(list, String.CASE_INSENSITIVE_ORDER); //sorts string ignores cases
+        //System.out.println(Arrays.toString(new ArrayList[]{list}));
+
     }
-    public static void WordSort(String s, String prefix) {
-    if (s.isEmpty()) {
-    System.out.println(prefix);
-    return;
+
 }
 
-    // Recursive case:
-    // Split the input word by space and iterate through the words
-        for (String word : s.split(" ")) {
-    // Call WordSort recursively with the remaining input and the current word concatenated to the prefix
-    WordSort(s.replaceFirst("\\b" + word + "\\b", "").trim(), prefix + " " + word.toUpperCase());
-}
-}
-}
  /*
-   ArrayList<String> list = new ArrayList<String>(); //list of words with different cases and in random order
-        Scanner input = new Scanner(System.in);
-        String string = input.next();
-        list.add(input);
-    Arrays.sort(list, String.CASE_INSENSITIVE_ORDER); //sorts string ignores cases
-    System.out.println(Arrays.toString(list));
+
      */
