@@ -9,7 +9,6 @@ sumTo (GS11-04)(BJP Ch 12 Ex 9) pg796
     - https://github.com/MichaelTMiyoshi/JavaWithMiyoshi/blob/master/Problems/GoalSheet11.md
     - CH12:748     Complete so far 0/7: found notes for 3/7
         (pg 764 throw new IllegalArgumentException,
-        doubles not ints
  */
 import java.util.Scanner;
 import java.util.*;
@@ -18,14 +17,10 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 public class Sem2Proj1RecursionGoalSheetGS1104 {
-    public static void main (String[]args)
+    public static double sumTo(int n)
     {
-        System.out.println("Welcome to GS11-04, \n input a number and the computer will output of the first n reciprocals, as well as calculate the same for the numbers prior to it in descending order.");
-        System.out.println(sumTo(2)); // should print 1.5
-    }
-    public static double sumTo(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("n must be zero or greater");
+            throw new IllegalArgumentException("Input must be equal to or greater than 0");
         }
         if (n == 0) {
             return 0.0;
@@ -33,5 +28,24 @@ public class Sem2Proj1RecursionGoalSheetGS1104 {
             return 1.0 / n + sumTo(n - 1);
         }
     }
-
+    public static void main(String[] args)
+    {
+        System.out.println("Welcome to SumTo! \n Where you will input an integer and the computer will return a real number representing the sum of the first n reciprocals");
+        System.out.println("Would you like to play? if so input 1 otherwise input any other integer");
+        Scanner play = new Scanner(System.in);
+        int i = Integer.parseInt(play.nextLine());
+        while (i==1)
+        {
+            System.out.println("Please input an integer and the computer will return a real number representing the sum of the first n reciprocals");
+            Scanner reset = new Scanner(System.in);
+            int n = Integer.parseInt(reset.nextLine());
+            double result = sumTo(n);
+            System.out.println("sumTo(" + n + ") = " + result);
+            System.out.println("Would you like to do it again? if so input 1 otherwise input any other integer");
+            i = Integer.parseInt(play.nextLine());
+        }
+    }
 }
+
+
+

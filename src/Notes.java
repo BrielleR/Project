@@ -11,13 +11,16 @@ RPG Use page(s) 824 - 827
 Adventure Use strings or page(s) 824 - 827
 
 Semester 2 Projects complete 0/4
-Project 1: (due 2/29/24) Conways Game of Life OR Notes Application page 827, 857 OR Sudoku use page 831. 852
+Project 1: (due 2/29/24) MANCALA
 Project 2: (3/29/24) Recursion Goal Sheet(aka GS11) 0/5 (
-Project 3: (due 4/29/24)
-Project 4: (due 5/3/24)Levenshtein (Required) (Don't need to but 2x for Levenshtein the shortest paths)
+Project 3: (due 4/29/24) PROJ 4 ALL SHORTEST PATHS
+Project 4: (due 5/3/24)Levenshtein (Required) (counts for 2 proj if it is for all the shortest paths)
 Sem 1 Other Project options:
 Solitaire use 780 - 781
-y
+Conways Game of Life
+ Notes Application page 827, 857
+  Sudoku use page 831. 852
+
 SEM 2 Notes:
 Proj 1 Recursion Goal Sheet (R)
     - (aka GS11)
@@ -42,10 +45,10 @@ Proj 1 Recursion Goal Sheet (R)
         (pg
     - Fibonacci (GS11-05)(BJP Ch 12 Problem 16) (more efficient recursive)
 
-Proj 2 Path Following
+Proj 2 Path Following or MANCALA
     - (due 3/29/24)  (//24-//24)
 
-Proj 3 ______
+Proj 3 Levenshtein All Shortest Paths
     - (due 4/29/24) (//24-//24)
 
 Proj 4 Levenshtein (R)(lists,files,recursion)
@@ -54,9 +57,10 @@ Proj 4 Levenshtein (R)(lists,files,recursion)
     - https://en.wikipedia.org/wiki/Levenshtein_distance
 
 OTHER To-Do:
-    -Inquiry Letter (due 2/5/24)
-    -Leadership 250 (due 2/8/24)
-    -Leadership 250 (due 5/13/24)
+    -EVALUATION sheet on last project
+    -Inquiry Letter (due 2/5/24) SKIPPED
+    -Leadership 250 (due 2/8/24) COMPLETE
+    -Leadership 250 (due 5/13/24) COMPLETE
     -Oral Presentation - Project (due by 5/30/24)
     -GS10 (due 2/16/24)
     -GS11 (due 3/01/24) *(R) (Proj 2 Recursion Goal Sheet)

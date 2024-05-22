@@ -5,7 +5,6 @@ public class Sem1Proj5MastermindTester
 {
     private static final String testFilename = "mastermind_4p6c.txt";
 
-    //-------------------------------------------------------------------------------------------
     // This is an example using a fake student and a broken algorithm.
     static class ExampleStudent extends StudentAlgorithm {
 

@@ -25,5 +25,19 @@ beginning word, such as “dog”. Your algorithm should repeatedly remove the f
 neighbors to the end of the list, until the ending word (such as “cat”) is found or until the list becomes empty, which
 indicates that no path exists between the two words.
  */
+import java.io.*;
+import java.util.Scanner;
+import java.util.*;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
 public class Sem2Proj4Levenshtein {
+    public static void main(String[]args)
+    {
+        System.out.println("Welcome to Levenshtein");
+        System.out.println("In this game you will input two words, and the computer will tell you all the shortest distances between the two words!");
+        System.out.println("Would you like to play? If so enter 1 if not enter any other positive integer!");
+
+    }
 }
