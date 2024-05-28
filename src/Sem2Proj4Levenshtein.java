@@ -1,4 +1,5 @@
 /*Brielle Roze
+Proj 4/5: Levenshtein
 BJP Ch 11 project 1. Find edit (Levenshtein) distance between words. Read words from a sorted dictionary file.
 Compute a map from every word to its immediate neighbors, that is, the words that have an edit distance of 1 from it.
  You can walk the map to find paths from one word to another, and can use a linked list of words to visit neighbors.
@@ -24,6 +25,13 @@ A good way to process paths to walk the neighbor map is to use a linked list of 
 beginning word, such as “dog”. Your algorithm should repeatedly remove the front word of the list and add all of its
 neighbors to the end of the list, until the ending word (such as “cat”) is found or until the list becomes empty, which
 indicates that no path exists between the two words.
+Tracker
+Date: 5/26/24
+Notes:
+Date: 5/27/24
+Notes:
+Date:5/28/24
+Notes:
  */
 import java.io.*;
 import java.util.Scanner;
