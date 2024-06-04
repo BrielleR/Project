@@ -1,6 +1,6 @@
 /*Brielle Roze
 sumTo (GS11-04)(BJP Ch 12 Ex 9) pg796
-    -Write a recursive method called sumTo that accepts an integer parameter n and returns a real number representing
+ -Write a recursive method called sumTo that accepts an integer parameter n and returns a real number representing
      the sum of the first n reciprocals. In other words, sumTo(n) returns (1 + ½ + 1/3 + ¼ + … + 1/n). For example,
      sumTo(2) should return 1.5. The method should return 0.0 if it is passed the value 0 and throw an
      IllegalArgumentException if it passed a value less than 0. (BJP Ch 12 Ex 9)
@@ -11,11 +11,6 @@ sumTo (GS11-04)(BJP Ch 12 Ex 9) pg796
         (pg 764 throw new IllegalArgumentException,
  */
 import java.util.Scanner;
-import java.util.*;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Random;
 public class Sem2Proj1RecursionGoalSheetGS1104 {
     public static double sumTo(int n)
     {
@@ -23,9 +18,9 @@ public class Sem2Proj1RecursionGoalSheetGS1104 {
             throw new IllegalArgumentException("Input must be equal to or greater than 0");
         }
         if (n == 0) {
-            return 0.0;
+            return 0;
         } else {
-            return 1.0 / n + sumTo(n - 1);
+            return (double) 1 / n + sumTo(n - 1);
         }
     }
     public static void main(String[] args)

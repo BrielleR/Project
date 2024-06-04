@@ -1,5 +1,5 @@
 /*Brielle Roze
-Problem GS10-04 - Merge Sort (double) (BJP Ch 13 Proj 1) pg 846
+Problem GS10-04 - Merge Sort (double) (BJP Ch 13 Proj 1)pg 846
     - Write a program that reads a series of input lines and sorts them into alphabetical order, ignoring the case of
     words. The program should use the merge sort algorithm so that it efficiently sorts even a large file. (BJP Ch 13 Proj 1)
     - (Chapter 12)(info: 744-789 prob: 790-799 online v)
@@ -21,16 +21,9 @@ System.out.println(Arrays.toString(strings));
 Date:3/6/24
 Notes:Make it so user creates the list of words, then sort the list alphabetically
 */
-import java.util.*;
-import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
-
-import java.util.Scanner;
-
 public class Sem2Proj1RecursionGoalSheetGS1004
 {
     public static void main(String[]args)

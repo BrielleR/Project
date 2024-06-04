@@ -1,5 +1,6 @@
 /*Brielle Roze
-writeNums  (GS11-02)(BJP Ch 12 Ex 2) pg 794
+writeNums  (GS11-02)(BJP Ch 12 Ex 2)
+pg 794
     - "Write a recursive method called writeNums that takes an integer n as a parameter and prints to the console
     the first n integers starting with 1 in sequential order, separated by commas. (BJP Ch 12 Ex 2)"pg 794
     - (Chapter 12)(info: 744-789 prob: 790-799 online v)
@@ -11,7 +12,6 @@ writeNums  (GS11-02)(BJP Ch 12 Ex 2) pg 794
  Notes: Complete
  */
 import java.util.*;
-
 public class Sem2Proj1RecursionGoalSheetGS1102 {
     public static void main(String[] args) {
         System.out.println("Welcome to GS11-02, \nPlease input a number (greater then 0) and the computer will output counting up to " +
@@ -34,21 +34,3 @@ public class Sem2Proj1RecursionGoalSheetGS1102 {
     }
 
 }
-
-
-    /*
-    //String[] wordList = {
-    public static ArrayList<Integer> RecursionGS(int n) {
-
-        ArrayList<Integer> list = new ArrayList<Integer>(); //list with all the versions/variables of n at the end reverse list order and output it
-
-        if (n > 0) //when the user input is greater than 1 do the following:
-        {
-            RecursionGS(n - 1); // subtract - from n
-            list.add(n); //add the new n
-            System.out.print(n+","); //output new n
-        }
-        return list; //returns int list
-    }
-
-     */

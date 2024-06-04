@@ -1,10 +1,11 @@
 /*Brielle Roze
 Mancala (classes & lists)
+
 * may be difficult to do with text
 There are 1680 four digit combinations you can make with numbers 1-8!! |:o|
 options compare the number vs. compare the strings... comparing the strings in arrays isn't working
- */
-import java.io.*;
+
+*/
 import java.util.Scanner;
 import java.util.*;
 import java.util.List;
@@ -24,7 +25,7 @@ public class Sem2Proj3Mancala {
             List<String> listAnswer = new ArrayList<String>();
             Random r = new Random();
             for (int i = 0; i < 4; i++) {
-                int answer = r.nextInt(8) + 1; // random number from 1–10
+                int answer = r.nextInt(8) + 1; // random number from 1–8
                 switch (answer) {
                     case 1:
                         listAnswer.add("red");
@@ -93,10 +94,12 @@ public class Sem2Proj3Mancala {
                                     break;
                             }
                             i++;
-                        } else {
+                        } else
+                        {
                             System.out.println("Invalid input. Please enter a number between 1 and 8.");
                         }
-                    } else {
+                    } else
+                    {
                         System.out.println("Invalid input. Please enter a number.");
                         guess.next();
                     }
@@ -104,9 +107,11 @@ public class Sem2Proj3Mancala {
                 int redPoints = 0;
                 int whitePoints = 0;
                 for (int i = 0; i < 4; i++) {
-                    if (list.get(i).equals(listAnswer.get(i))) {
+                    if (list.get(i).equals(listAnswer.get(i)))
+                    {
                         redPoints++;
-                    } else if (listAnswer.contains(list.get(i))) {
+                    } else if (listAnswer.contains(list.get(i)))
+                    {
                         whitePoints++;
                     }
                 }

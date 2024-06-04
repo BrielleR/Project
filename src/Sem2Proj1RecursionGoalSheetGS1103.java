@@ -1,6 +1,6 @@
 /*Brielle Roze
 writeSequence (GS11-03)(BJP Ch 12 Ex 3) pg795
-    - Write a recursive method called writeSequence that accepts an integer n as a parameter and prints to the console
+ - Write a recursive method called writeSequence that accepts an integer n as a parameter and prints to the console
      a symmetric sequence of n numbers composed of descending integers that ends in 1, followed by a sequence of
      ascending integers that begins with 1. When n is odd, the sequence has a single 1 in the middle, but when n is
      even, it has two 1s in the middle. Throw an IllegalArgumentException if it is passed a value less than 1. (BJP Ch 12 Ex 3)
@@ -17,25 +17,25 @@ Date:
 Notes:
  */
 import java.util.Scanner;
-
 public class Sem2Proj1RecursionGoalSheetGS1103 {
    public static void main (String[]args)
    {
-       System.out.println("Please input a integer, the computer will then print your output and count down numbers" +
-               " in descending order starting with your output ending with 1, it will then count up form n in " +
-               "ascending order until it reaches your input ");
-
-       Scanner recur = new Scanner(System.in);
-       int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
-       if (n%2== 0) //call if n is even
-       {
-           writeSequence1(n);
+//       System.out.println("Please input a positive integer. \n The computer will then print your output and count down numbers\n" +
+//               " In descending order starting with your output ending with 1. \n It will then count up form n in " +
+//               "ascending order until it reaches your input ");
+//       Scanner recur = new Scanner(System.in);
+//       int n = Integer.parseInt(recur.nextLine()); //gets user input and also makes it n's value
+       //int n = 1;
+       for (int n = 0; n<=10; n++) {
+           if (n % 2 == 0) //call if n is even
+           {
+               writeSequence1(n);
+           } else if (n % 2 != 0) //call if n is odd
+           {
+               writeSequence2(n);
+           }
+           System.out.println();//extra just so that after list is out put there's a gap between output and 'disconnect..."
        }
-       else if (n%2 != 0) //call if n is odd
-       {
-           writeSequence2(n);
-       }
-       System.out.println();//extra just so that after list is out put there's a gap between output and 'disconnect..."
 
    }
 
@@ -66,32 +66,3 @@ public static void writeSequence2(int n)
     }
     }
 }
-/*
- //String[] wordList = {
-    public static ArrayList<Integer> RecursionGS(int n) {
-
-        ArrayList<Integer> list = new ArrayList<Integer>(); //list with all the versions/variables of n at the end reverse list order and output it
-
-        if (n < 0)
-        {
-            throw new IllegalArgumentException("negative input: " + n); //if input is less than 0 aka neg then this throws an illegal argument exception
-        }
-        else if (n > 1) //when the user input is greater than 1 do the following:
-        {
-
-            if (n%2 ==0) {
-                RecursionGS(n - 1); // subtract - from n
-                list.add(n); //add the new n
-                System.out.println(n); //output new n
-            }
-            else
-            {
-                RecursionGS(n - 1); // subtract - from n
-                list.add(n); //add the new n
-                System.out.println(n); //output new n
-            }
-
-        }
-        return list; //returns int list
-    }
- */

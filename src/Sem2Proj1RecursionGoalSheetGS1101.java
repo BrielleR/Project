@@ -1,5 +1,6 @@
 /*Brielle Roze
-starString (GS11-01) (BJP Ch 12 Ex 1) pg 794,
+starString (GS11-01) (BJP Ch 12 Ex 1)
+pg 794,
     -"Write a recursive method called starString that accepts an integer as a parameter and prints to the console a
       string of stars (asterisks) that is 2n (i.e.2 to the nth power) long. (BJP Ch 12 Ex 1)"
     - (Chapter 12)(info: 744-789 prob: 790-799 online v)
@@ -13,11 +14,6 @@ Date:
 3/6/24 -complete
  */
 import java.util.Scanner;
-import java.util.*;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Random;
 public class Sem2Proj1RecursionGoalSheetGS1101
 {
     public static void main (String[]args)

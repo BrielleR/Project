@@ -1,6 +1,6 @@
 /*Brielle Roze
 Problem GS10-02 - writeSquares  (BJP Ch 12 Ex 6)
-    - "Write a recursive method called writeSquares that accepts an integer parameter n and prints the first n squares
+ - "Write a recursive method called writeSquares that accepts an integer parameter n and prints the first n squares
     separated by commas, with the odd squares in descending order followed by the even squares in ascending order.
     For example, writeSquares(8); prints the following output:49, 25, 9, 1, 4, 16, 36, 64 (BJP Ch 12 Ex 6)"
     - (Chapter 12)(info: 744-789 prob: 790-799 online v)
@@ -36,7 +36,6 @@ import java.util.Random;
 import java.io.*;
  */
 import java.util.Scanner;
-
 public class Sem2Proj1RecursionGoalSheetGS1002 {
     public static void main(String[] args) {
         System.out.println("Welcome to Write Squares!");
