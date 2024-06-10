@@ -34,7 +34,12 @@ Ending the Game:
 The game is over when one player’s pits are completely empty. The other player takes the seeds
 remaining in her pits and puts those seeds in her store. Count up the seeds. Whoever has the most
 seeds wins.
-
+Date: 6/4/24
+Notes: Introduction and dice roll
+Date: 6/6/24
+Notes: Computers moves and how it plays based off the user
+Date: 6/10/24
+Notes:
  */
 public class Sem2Project3MancalaTakeTwo {
     public static void main(String[]args)
@@ -60,7 +65,7 @@ public class Sem2Project3MancalaTakeTwo {
         if (yes == 1)
         {
             int room = 0;
-            if (room ==0) {
+            if (room == 0) {
                 System.out.println("Thank you for choosing to play!");
                 //Dice roll to decide who will go first
                 Random r = new Random();
