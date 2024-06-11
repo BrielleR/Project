@@ -1,5 +1,5 @@
 /*Brielle Roze
-Proj 4/5: Levenshtein
+Proj 4/5: Levenshtein (lists, files, recursion)
 BJP Ch 11 project 1. Find edit (Levenshtein) distance between words. Read words from a sorted dictionary file.
 Compute a map from every word to its immediate neighbors, that is, the words that have an edit distance of 1 from it.
  You can walk the map to find paths from one word to another, and can use a linked list of words to visit neighbors.

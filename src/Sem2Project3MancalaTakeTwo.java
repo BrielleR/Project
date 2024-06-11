@@ -1,12 +1,9 @@
-import java.util.Random;
-import java.util.Scanner;
-
 /*Brielle Roze
-Project 3 Take 2
+Project 3 Take 2 (classes and lists)
 Mancala, (apparently the first one was actually mastermind... :\but I did do mastermind first semester but that was with numbers... this was numbers/colors (does this make it proj 4 or three...?) also technocally the other one was proj 1/2 so... )
  RULES OF MANCALA: (according to https://www.scholastic.com/content/dam/teachers/blogs/alycia-zimmerman/migrated-files/mancala_rules.pdf)
  Objective: To collect as many seeds in your store as possible. The player with the most seeds in
-his/her store at the end of the game wins.
+their store at the end of the game wins.
 Set Up: Place four seeds in each of the six pits on your side of the game board. Your opponent
 should do the same. The colors of the seeds don’t matter. (For a shorter game, you can play with
 three seeds in each pit.)
@@ -37,10 +34,12 @@ seeds wins.
 Date: 6/4/24
 Notes: Introduction and dice roll
 Date: 6/6/24
-Notes: Computers moves and how it plays based off the user
+Notes: Computers moves and how it plays based off the user, or have the user play against them self, or have them be with someone else and hand the computer to "player 2"
 Date: 6/10/24
 Notes:
  */
+import java.util.Random;
+import java.util.Scanner;
 public class Sem2Project3MancalaTakeTwo {
     public static void main(String[]args)
     {
@@ -54,7 +53,7 @@ public class Sem2Project3MancalaTakeTwo {
                 "\n* The six pits near you are your pits." +
                 "\n* Only use one hand to pick up and put down seeds." +
                 "\n* Once you touch the seeds in a pit, you must move those seeds." +
-                "\n* Only put seeds in your own store, not your opponent’s store. " +
+                "\n* You can only put seeds in your own store, not your opponent’s store. " +
                 "\n* When the last seed in your hand lands in your store, take another turn." +
                 "\n* When the last seed in your hand lands in one of your own pits, if that pit is not empty you" +
                 "get to keep all the seeds in your opponents pit on the opposite side. Put those captured seeds," +
