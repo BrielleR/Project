@@ -40,7 +40,9 @@ import java.util.List;
 
 public class Sem2Project3MancalaTakeTwo {
     public static void main(String[] args) {
+        // Create a new instance of the MancalaGame class
         MancalaGame game = new MancalaGame();
+        // Start the game
         game.playGame();
     }
 }
@@ -57,25 +59,37 @@ class MancalaGame {
 
     // Constructor to initialize the game
     public MancalaGame() {
+        // Initialize the player's pits with 4 seeds each
         this.playerPits = new ArrayList<>();
-        this.computerPits = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             playerPits.add(4);
+        }
+        // Initialize the computer's pits with 4 seeds each
+        this.computerPits = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
             computerPits.add(4);
         }
+        // Initialize the player's and computer's stores to 0
         this.playerStore = 0;
         this.computerStore = 0;
-        // decide who plays first by rolling a die
+        // Decide who plays first by rolling a die
         this.playerTurn = rollDice();
     }
 
     // method to roll a die
     private boolean rollDice() {
         Random random = new Random();
-        int playerRoll = random.nextInt(6) + 1; //user dice
-        int computerRoll = random.nextInt(6) + 1; //computer dice
+        int playerRoll = random.nextInt(6) + 1; // user dice
+        int computerRoll = random.nextInt(6) + 1; // computer dice
         System.out.println("Dice Rolls: \n You rolled: " + playerRoll + " \n The computer rolled: " + computerRoll);
-        return playerRoll >= computerRoll;
+        if (playerRoll == computerRoll) {
+            // If the rolls are equal, roll again
+            rollDice();
+        } else {
+            // Otherwise, the player with the higher roll goes first
+            return playerRoll >= computerRoll;
+        }
+        return false;
     }
 
     // Method to play the game
@@ -88,7 +102,7 @@ class MancalaGame {
                 "until you run out of seeds. \nIf the last seed lands in your store, you get another turn. " +
                 "\nIf the last seed lands in an empty pit on your side, " +
                 "you can capture your opponent's seeds across from that pit and put them in your store. " +
-                "The game ends when one player has no seeds left in their pits, " +
+                "\nThe game ends when one player has no seeds left in their pits, " +
                 "and the player with the most seeds in their store wins.");
         System.out.println("If you would you like to play please enter 1! " +
                 "\nIf not please enter any other positive whole integer!");
@@ -96,10 +110,14 @@ class MancalaGame {
         if (response == 1) {
             while (true) {
                 printGameBoard();
+                if (isGameOver()) {
+                    printGameBoard();
+                    System.out.println("Game over! Final score - You: " + playerStore + ", Computer: " + computerStore);
+                    break;
+                }
                 if (playerTurn) {
                     int pitNumber;
                     while (true) {
-                        isGameOver();
                         System.out.println("Your turn! Enter the pit number (1-6) to play:");
                         pitNumber = scanner.nextInt();
                         if (pitNumber >= 1 && pitNumber <= 6) {
@@ -126,7 +144,6 @@ class MancalaGame {
                     }
                     playerTurn = canPlayAgain(pitNumber, playerPits, playerStore);
                 } else {
-                    isGameOver();
                     System.out.println("It in now the Computer's turn: ");
                     int pitNumber = computerMove(computerPits);
                     int seeds = computerPits.get(pitNumber - 1);
@@ -145,12 +162,7 @@ class MancalaGame {
                             }
                         }
                     }
-                    playerTurn = !canPlayAgain(pitNumber, computerPits, computerStore);
-                }
-                if (isGameOver()) {
-                    printGameBoard();
-                    System.out.println("Game over! Final score - You: " + playerStore + ", Computer: " + computerStore);
-                    break;
+                    playerTurn =!canPlayAgain(pitNumber, computerPits, computerStore);
                 }
             }
         } else {
@@ -160,28 +172,30 @@ class MancalaGame {
 
     // method to determine if a player can play again
     private boolean canPlayAgain(int pitNumber, List<Integer> pits, int store) {
-        return pitNumber == 7;
+        return pitNumber == 7 || store > 0;
     }
-    // method to determine the computers move
+
+    // method to determine the computer's move
     private int computerMove(List<Integer> computerPits) {
         for (int i = 0; i < 6; i++) {
             if (computerPits.get(i) > 0) {
                 return i + 1;
             }
-        } return 1;
+        }
+        return 1;
     }
+
     // method to check if the game is over
     private boolean isGameOver() {
+        int playerPitsSum = 0;
+        int computerPitsSum = 0;
         for (int pit : playerPits) {
-            if (pit > 0) {
-                return false;
-            }
+            playerPitsSum += pit;
         }
         for (int pit : computerPits) {
-            if (pit > 0) {
-                return false;
-            }
-        } return true;
+            computerPitsSum += pit;
+        }
+        return playerPitsSum == 0 || computerPitsSum == 0;
     }
 
     // Method to print the game layout
