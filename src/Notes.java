@@ -85,60 +85,120 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 public class Notes
+{public static void main(String[]args)
 {
-    public static void main(String[] args)
-        {
-            String[] wordList = {"6684"}; //list of four-digit number, in reality the list would be longer but in this case
-            String answer = wordList[new Random().nextInt(wordList.length)]; //picks random word from the list
-            int chances = 0;
-            char[] guess = new char[4];
-            int retry = 0;
-            int num = 1;
-            int BlackPegs = 0;
-            int WhitePegs = 0;
-            System.out.println("\nWelcome to Mastermind, \nIn this game you will get infinite chances to guess a preselected four digit number."); //Intro
-            System.out.println("A black peg signifies that a digit entered was the correct number in the correct position.\nA white peg signifies that a digit entered was the correct number in the wrong location.\nThere fore once you achieve a result of 4 black pegs you have found all the correct number in the correct positions."); //explain game
-            System.out.println("\nIf you would like to play please type 1 if not enter 0)");
-            Scanner reset = new Scanner(System.in);
-            int start = Integer.parseInt(reset.nextLine());
-            if (start == 1) {
-                while (!Arrays.equals(guess, answer.toCharArray())) {
-                    System.out.println("\nPlease enter your guess(must be a four digit number): ");
-                    Scanner game = new Scanner(System.in);
-                    String input = game.next();
-                    if (input.length() != 4) {
-                        System.out.println("\nYour guess was not a four digit number!");
-                        continue;
-                    }
-                    guess = input.toCharArray();
-                    //time to give the user input, check the users guess as well as give feedback through coloring(only two colors) the number to let them know how accurate their guess is not by telling them what each ones colors are but letting them know how many of each color they got.
-                    for (int i = 0; i < 4; i++)
-                    {
-                        if (guess[i] == answer.charAt(i)) {
-                            BlackPegs++;
-                        } else if (answer.contains(Character.toString(guess[i]))) {
-                            WhitePegs++;
-                        }
-                    }
-                    System.out.println();
-                    chances++;
-                    System.out.println("\nYou have taken " + chances + " tries");
-                    System.out.print("\nNumber of White Pegs:" + WhitePegs);
-                    System.out.print("\nNumber of Black Pegs:" + BlackPegs);
-                }
-                if (chances > 0) {
-                    System.out.println("\nCONGRATULATIONS! You have successfully guessed the four digit number: " + answer);
-                    System.out.println("It took you: " + chances + " tries to guess the answer.");
-                }
-                //Lets user choose if they would like to retry
-                System.out.println("\nWould you like to play again? if not enter 1 if so please enter 0.");
-                Scanner choice = new Scanner(System.in);
-                retry = Integer.parseInt(choice.nextLine());
-            } else {
-                retry = 1;
+    System.out.println("Welcome to Playing Mancala!");
+    System.out.println("Here's How it works!: " +
+            "\nYou and the computer each have your own store and 6 pits." +
+            "\n Here are the General Rules: " +
+            "\n* Who plays first will be determined by a dice roll." +
+            "\n* Play always moves around the board in a counter-clockwise circle (to the right)" +
+            "\n* The store on your right belongs to you. That is where you keep the seeds you win." +
+            "\n* The six pits near you are your pits." +
+            "\n* Only use one hand to pick up and put down seeds." +
+            "\n* Once you touch the seeds in a pit, you must move those seeds." +
+            "\n* You can only put seeds in your own store, not your opponent’s store. " +
+            "\n* When the last seed in your hand lands in your store, take another turn." +
+            "\n* When the last seed in your hand lands in one of your own pits, if that pit is not empty you" +
+            "get to keep all the seeds in your opponents pit on the opposite side. Put those captured seeds," +
+            "as well as the last seed that you just played on your side, into your store.");
+    System.out.println("Would you like to play? If so please enter 1, if not please enter any other positive whole integer!");
+    Scanner reset = new Scanner(System.in);
+    int yes = Integer.parseInt(reset.nextLine());
+    if (yes == 1)
+    {
+        int room = 0;
+        if (room == 0) {
+            System.out.println("Thank you for choosing to play!");
+            //Dice roll to decide who will go first
+            Random r = new Random();
+            int roll = r.nextInt(6) + 1; // random number from 1–6
+            int roll2 = r.nextInt(6) + 1; // random number from 1–6
+            System.out.println("Who goes first will be determined by a dice roll! \nThe computer has rolled: " + roll + " \nAnd you have rolled: " + roll2);
+
+            if (roll == roll2)//when they have rolled the same thing
+            {
+                System.out.println("Time to re-roll the dice!");
+//                roll = r.nextInt(6) + 1;
+//                roll2 = r.nextInt(6) + 1;
+//                System.out.println("Who goes first will be determined by a dice roll! \nThe computer has rolled: " + roll + " \nAnd you have rolled: "+ roll2);
+                room = 0;
+            } else if (roll > roll2) {
+                System.out.println("The computer will go first!");
+                room = 1;
+            } else if (roll < roll2) {
+                System.out.println("You will go first!");
+                room = 2;
             }
         }
+        if (room == 1)
+        {
+            System.out.println("The Computers first move is: ");
+        }
+        if (room == 2)
+        {
+            System.out.println("What will your first move be?");
+        }
+
+
     }
+}
+
+}
+
+//    public static void main(String[] args)
+//        {
+//            String[] wordList = {"6684"}; //list of four-digit number, in reality the list would be longer but in this case
+//            String answer = wordList[new Random().nextInt(wordList.length)]; //picks random word from the list
+//            int chances = 0;
+//            char[] guess = new char[4];
+//            int retry = 0;
+//            int num = 1;
+//            int BlackPegs = 0;
+//            int WhitePegs = 0;
+//            System.out.println("\nWelcome to Mastermind, \nIn this game you will get infinite chances to guess a preselected four digit number."); //Intro
+//            System.out.println("A black peg signifies that a digit entered was the correct number in the correct position.\nA white peg signifies that a digit entered was the correct number in the wrong location.\nThere fore once you achieve a result of 4 black pegs you have found all the correct number in the correct positions."); //explain game
+//            System.out.println("\nIf you would like to play please type 1 if not enter 0)");
+//            Scanner reset = new Scanner(System.in);
+//            int start = Integer.parseInt(reset.nextLine());
+//            if (start == 1) {
+//                while (!Arrays.equals(guess, answer.toCharArray())) {
+//                    System.out.println("\nPlease enter your guess(must be a four digit number): ");
+//                    Scanner game = new Scanner(System.in);
+//                    String input = game.next();
+//                    if (input.length() != 4) {
+//                        System.out.println("\nYour guess was not a four digit number!");
+//                        continue;
+//                    }
+//                    guess = input.toCharArray();
+//                    //time to give the user input, check the users guess as well as give feedback through coloring(only two colors) the number to let them know how accurate their guess is not by telling them what each ones colors are but letting them know how many of each color they got.
+//                    for (int i = 0; i < 4; i++)
+//                    {
+//                        if (guess[i] == answer.charAt(i)) {
+//                            BlackPegs++;
+//                        } else if (answer.contains(Character.toString(guess[i]))) {
+//                            WhitePegs++;
+//                        }
+//                    }
+//                    System.out.println();
+//                    chances++;
+//                    System.out.println("\nYou have taken " + chances + " tries");
+//                    System.out.print("\nNumber of White Pegs:" + WhitePegs);
+//                    System.out.print("\nNumber of Black Pegs:" + BlackPegs);
+//                }
+//                if (chances > 0) {
+//                    System.out.println("\nCONGRATULATIONS! You have successfully guessed the four digit number: " + answer);
+//                    System.out.println("It took you: " + chances + " tries to guess the answer.");
+//                }
+//                //Lets user choose if they would like to retry
+//                System.out.println("\nWould you like to play again? if not enter 1 if so please enter 0.");
+//                Scanner choice = new Scanner(System.in);
+//                retry = Integer.parseInt(choice.nextLine());
+//            } else {
+//                retry = 1;
+//            }
+//        }
+//    }
 //MANCALA
 
 
