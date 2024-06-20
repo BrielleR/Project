@@ -32,7 +32,19 @@ The game is over when one player’s pits are completely empty. The other player
 remaining in her pits and puts those seeds in her store. Count up the seeds. Whoever has the most
 seeds wins.
 
+Emi L: Make the Computers turn and players turn more spaced apart, in order to more clearly differentiate, maybe even color code, was a little confusing because of how close they were.
+
+Edits: made the game board look nicer?
+
+Gunjan J.:After playing for a bit was easy to understand, however when I reached a point where all my pits were empty the screen did not change to game over. Also, what's supposed to happen if player and computer have same dice roll?
+
+Edits: fixed it so when either computer or players pits reach 0 game ends, and fixed the dice roll so when they roll the same thing dice reroll.
+
+Personal Review:
+fails to properly increase computers store? remain 0, but during an infinte loop increases properly?
+
  */
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -76,21 +88,7 @@ class MancalaGame {
         this.playerTurn = rollDice();
     }
 
-    // method to roll a die
-    private boolean rollDice() {
-        Random random = new Random();
-        int playerRoll = random.nextInt(6) + 1; // user dice
-        int computerRoll = random.nextInt(6) + 1; // computer dice
-        System.out.println("Dice Rolls: \n You rolled: " + playerRoll + " \n The computer rolled: " + computerRoll);
-        if (playerRoll == computerRoll) {
-            // If the rolls are equal, roll again
-            rollDice();
-        } else {
-            // Otherwise, the player with the higher roll goes first
-            return playerRoll >= computerRoll;
-        }
-        return false;
-    }
+
 
     // Method to play the game
     public void playGame() {
@@ -169,8 +167,22 @@ class MancalaGame {
             System.out.println("Goodbye!");
         }
     }
+    // method to roll a die
+    private boolean rollDice() {
+        Random random = new Random();
+        int playerRoll = random.nextInt(6) + 1; // user dice
+        int computerRoll = random.nextInt(6) + 1; // computer dice
+        System.out.println("Dice Rolls: \n You rolled: " + playerRoll + " \n The computer rolled: " + computerRoll);
+        if (playerRoll == computerRoll) { // If the rolls are equal, roll again
+            rollDice();
+        } else {
+            // Otherwise, the player with the higher roll goes first
+            return playerRoll >= computerRoll;
+        }
+        return false;
+    }
 
-    // method to determine if a player can play again
+     //method to determine if a player can play again
     private boolean canPlayAgain(int pitNumber, List<Integer> pits, int store) {
         return pitNumber == 7 || store > 0;
     }
@@ -199,10 +211,20 @@ class MancalaGame {
     }
 
     // Method to print the game layout
-    private void printGameBoard() {
-        System.out.println("  Computer Pits: " + computerPits);
-        System.out.println("  Computer Store: " + computerStore);
-        System.out.println("  Your Pits: " + playerPits);
-        System.out.println("  Your Store: " + playerStore);
+//    private void printGameBoard() {
+//        System.out.println("  Computer Pits: " + computerPits);
+//        System.out.println("  Computer Store: " + computerStore);
+//        System.out.println("  \n\nYour Pits: " + playerPits);
+//        System.out.println("  Your Store: " + playerStore);
+//    }
+    // Method to print the game board
+    public void printGameBoard() {
+        System.out.println("                 1 | 2 | 3 | 4 | 5 | 6");
+        System.out.println("                 ---+---+---+---+---+---");
+        System.out.println("\nYour Pits:       " + playerPits.get(0) + " | " + playerPits.get(1) + " | " + playerPits.get(2) + " | " + playerPits.get(3) + " | " + playerPits.get(4) + " | " + playerPits.get(5));
+        System.out.println("                 ---+---+---+---+---+---");
+        System.out.println("\nComputers Pits:  " + computerPits.get(5) + " | " + computerPits.get(4) + " | " + computerPits.get(3) + " | " + computerPits.get(2) + " | " + computerPits.get(1) + " | " + computerPits.get(0));
+        System.out.println("                 ---+---+---+---+---+---");
+        System.out.println("  Your store: " + playerStore + ", Computer's store: " + computerStore);
     }
 }

@@ -43,19 +43,143 @@ Notes:made dictionary file
 Date:5/29/24
 Notes:
  */
-import java.io.*;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Random;
+
 public class Sem2Proj4Levenshtein {
-    public static void main(String[]args)
-    {
+    // A map to store each word and its immediate neighbors (words with an edit distance of 1)
+    private static final Map<String, List<String>> neighborMap = new HashMap<>();
+
+    public static void main(String[] args) {
+
         System.out.println("Welcome to Levenshtein");
         System.out.println("In this game you will input two words, and the computer will tell you all the shortest distances between the two words!");
-        System.out.println("Would you like to play? If so enter 1 if not enter any other positive integer!");
+        System.out.println("Would you like to play? If so enter 1 if not enter 0!");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Add this line to consume the newline character
 
+        if (choice == 1) {
+            // Get the two words from the user
+            System.out.println("Enter the first word:");
+            String word1 = scanner.nextLine();
+            System.out.println("Enter the second word:");
+            String word2 = scanner.nextLine();
+
+            buildNeighborMap();
+            // Find all shortest paths between the two words
+            List<List<String>> shortestPaths = findShortestPaths(word1, word2);
+
+            if (shortestPaths.isEmpty()) {
+                System.out.println("There is no path between " + word1 + " and " + word2);
+            } else {
+                System.out.println("Shortest paths between " + word1 + " and " + word2 + ":");
+                for (List<String> path : shortestPaths) {
+                    System.out.println(path);
+                }
+            }
+        } else {
+            System.out.println("Goodbye!");
+        }
+    }
+
+    // Build the neighbor map by reading the dictionary file
+    private static void buildNeighborMap() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("dictionaryLevenshtein.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Get the current word
+                String word = line.trim();
+
+                // Find all words with an edit distance of 1 from the current word
+                List<String> neighbors = new ArrayList<>();
+                for (String otherWord : neighborMap.keySet()) {
+                    if (levenshteinDistance(word, otherWord) == 1) {
+                        neighbors.add(otherWord);
+                    }
+                }
+
+                // Add the current word and its neighbors to the map
+                neighborMap.put(word, neighbors);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+    }
+
+    // Compute the edit distance between two words using dynamic programming
+    private static int levenshteinDistance(String s1, String s2) {
+        int[] costs = new int[s2.length() + 1];
+        for (int k = 0; k <= s1.length(); k++) {
+            int lastValue = k;
+            for (int i = 0; i <= s2.length(); i++) {
+                if (k == 0) {
+                    costs[i] = i;
+                } else {
+                    if (i > 0) {
+                        int match = costs[i - 1] + (s1.charAt(k - 1) == s2.charAt(i - 1) ? 0 : 1);
+                        int insert = costs[i] + 1;
+                        int delete = lastValue + 1;
+                        costs[i] = Math.min(Math.min(insert, delete), match);
+                    }
+                    lastValue = costs[i];
+                }
+            }
+            if (k > 0) {
+                costs[s2.length()] = lastValue;
+            }
+        }
+        return costs[s2.length()];
+    }
+
+    // Find all shortest paths between two words using BFS
+    private static List<List<String>> findShortestPaths(String word1, String word2) {
+        List<List<String>> shortestPaths = new ArrayList<>();
+        int shortestDistance = Integer.MAX_VALUE;
+
+        // Create a queue to hold the words to visit
+        LinkedList<String> wordsToVisit = new LinkedList<>();
+
+        // Create a set to keep track of visited words
+        Set<String> visited = new HashSet<>();
+
+        // Add the first word to the list and mark it as visited
+        wordsToVisit.add(word1);
+        visited.add(word1);
+
+        // Loop until the list is empty
+        while (!wordsToVisit.isEmpty()) {
+            // Get the next word from the queue
+            String current = wordsToVisit.poll();
+
+            // If we've reached the second word, add the path to the shortest paths
+            if (current.equals(word2)) {
+                List<String> path = new ArrayList<>();
+                path.add(current);
+                while (!wordsToVisit.isEmpty()) {
+                    path.add(0, wordsToVisit.poll());
+                }
+                shortestPaths.add(path);
+                shortestDistance = path.size() - 1;
+            }
+
+            // Add the neighbors of the current word to the queue if they haven't been visited
+            if (neighborMap.containsKey(current)) {
+                for (String neighbor : neighborMap.get(current)) {
+                    if (!visited.contains(neighbor)) {
+                        wordsToVisit.add(neighbor);
+                        visited.add(neighbor);
+                    }
+                }
+            }
+        }
+
+        // Filter out paths that are not the shortest distance
+        int finalShortestDistance = shortestDistance;
+        shortestPaths.removeIf(path -> path.size() - 1 > finalShortestDistance);
+
+        return shortestPaths;
     }
 }
